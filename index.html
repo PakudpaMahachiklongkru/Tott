@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ปลากัดป่ามหาชัยเขตคลองครุ</title>
 
-  <!-- CSS สำหรับหน้าตา -->
   <style>
     body {
       font-family: sans-serif;
@@ -53,6 +52,7 @@
     .fish-card img {
       width: 100%;
       border-radius: 6px;
+      margin-bottom: 10px;
     }
     .btn-group {
       margin-top: 10px;
@@ -76,6 +76,11 @@
       color: gray;
       background: #e0e0e0;
       margin-top: 20px;
+    }
+
+    /* ซ่อนรูปเพิ่มเติม */
+    .hidden-imgs {
+      display: none;
     }
   </style>
 
@@ -109,15 +114,14 @@
       <a href="IMG_4687.png" data-lightbox="mahachai" data-title="ปลากัดมหาชัย">
         <img src="IMG_4687.png" alt="ปลากัดมหาชัย">
       </a>
-      <!-- ซ่อนรูปอื่นไว้สำหรับ Lightbox -->
-      <a href="IMG_4689.png" data-lightbox="mahachai" data-title="มุมด้านข้าง"></a>
-      <a href="IMG_4980.png" data-lightbox="mahachai" data-title="มุมด้านบน"></a>
-      <a href="IMG_4366.jpeg" data-lightbox="mahachai" data-title="มุมด้านบน"></a>
-      <a href="IMG_4359.jpeg" data-lightbox="mahachai" data-title="มุมด้านบน"></a>
-      <a href="IMG_3470.png" data-lightbox="mahachai" data-title="มุมด้านบน"></a>
-      <a href="IMG_3469.png" data-lightbox="mahachai" data-title="มุมด้านบน"></a>
-      
-      
+
+      <div class="hidden-imgs">
+        <a href="IMG_4689.png" data-lightbox="mahachai" data-title="มุมด้านข้าง"><img src="IMG_4689.png" alt=""></a>
+        <a href="IMG_4980.png" data-lightbox="mahachai" data-title="มุมด้านบน"><img src="IMG_4980.png" alt=""></a>
+        <a href="IMG_4366.jpeg" data-lightbox="mahachai" data-title="มุมใต้น้ำ"><img src="IMG_4366.jpeg" alt=""></a>
+        <a href="IMG_3470.png" data-lightbox="mahachai" data-title="มุมใต้น้ำ"><img src="IMG_3470.png" alt=""></a>
+        <a href="IMG_3469.png" data-lightbox="mahachai" data-title="มุมใต้น้ำ"><img src="IMG_3469.png" alt=""></a>
+      </div>
 
       <div class="btn-group">
         <a href="https://m.me/wild.betta.mahachai" target="_blank" class="btn btn-messenger">Messenger</a>
