@@ -69,6 +69,17 @@
     .btn-messenger { background: #0084ff; }
     .btn-whatsapp  { background: #25D366; }
     .btn-payhip    { background: #6666cc; }
+    .btn-more {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 6px 12px;
+      background-color: #00796b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
     footer {
       text-align: center;
       padding: 20px;
@@ -77,31 +88,7 @@
       background: #e0e0e0;
       margin-top: 20px;
     }
-
-  /* ส่วนที่ทำให้รูปถูกซ่อนอย่างถูกต้อง */
-  .hidden-imgs img {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin-bottom: 10px;
-}
-
-.hidden-imgs.show {
-  max-height: 2000px;
-}
-  .hidden-imgs {
-    overflow: hidden;
-    max-height: 0;
-    transition: max-height 0.5s ease;
-  }
-  .hidden-imgs.show {
-    max-height: none;
-  }
-</style>
-
-  <!-- Lightbox2 -->
-  <link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+  </style>
 </head>
 <body>
 
@@ -124,27 +111,20 @@
   <div class="fish-grid">
 
     <!-- มหาชัย -->
-    <!-- มหาชัย -->
-<div class="fish-card">
-  <h3>มหาชัย</h3>
-  <a href="A1.png" data-lightbox="mahachai" data-title="ปลากัดมหาชัย">
-    <img src="A1.png" alt="ปลากัดมหาชัย">
-  </a>
+    <div class="fish-card">
+      <h3>มหาชัย</h3>
+      <a href="A1.png" data-lightbox="mahachai" data-title="ปลากัดมหาชัย">
+        <img src="A1.png" alt="ปลากัดมหาชัย">
+      </a>
 
-  <div class="hidden-imgs" id="mahachai-hidden">
-    <a href="A1.png" data-lightbox="mahachai" data-title="มุมด้านข้าง"><img src="A1.png" alt=""></a>
-    <a href="A2.png" data-lightbox="mahachai" data-title="มุมด้านบน"><img src="A2.png" alt=""></a>
-    <a href="A3.png" data-lightbox="mahachai" data-title="มุมด้านหน้า"><img src="A3.png" alt=""></a>
-  </div>
+      <a href="mahachai.html" class="btn-more">ดูรูปเพิ่มเติม</a>
 
-  <button onclick="toggleImages('mahachai-hidden', this)">ดูรูปเพิ่มเติม</button>
-
-  <div class="btn-group">
-    <a href="https://m.me/wild.betta.mahachai" target="_blank" class="btn btn-messenger">Messenger</a>
-    <a href="https://wa.me/66800199351" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
-    <a href="https://payhip.com/b/xxxxxx" target="_blank" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
-  </div>
-</div>
+      <div class="btn-group">
+        <a href="https://m.me/wild.betta.mahachai" target="_blank" class="btn btn-messenger">Messenger</a>
+        <a href="https://wa.me/66800199351" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+        <a href="https://payhip.com/b/xxxxxx" target="_blank" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
+      </div>
+    </div>
 
     <!-- อีสาน -->
     <div class="fish-card">
@@ -165,19 +145,6 @@
 <footer>
   &copy; 2025 ปลากัดป่ามหาชัยเขตคลองครุ | ติดต่อเราได้ทุกช่องทาง
 </footer>
-
-<script>
-  function toggleImages(id, btn) {
-    const el = document.getElementById(id);
-    el.classList.toggle('show');
-
-    if (el.classList.contains('show')) {
-      btn.textContent = "ซ่อนรูป";
-    } else {
-      btn.textContent = "ดูรูปเพิ่มเติม";
-    }
-  }
-</script>
 
 </body>
 </html>
