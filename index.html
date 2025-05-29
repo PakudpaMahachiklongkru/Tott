@@ -78,10 +78,18 @@
       margin-top: 20px;
     }
 
-    /* ซ่อนรูปเพิ่มเติม */
-    .hidden-imgs img {
-  display: none;
-}
+    <style>
+  ...
+  .hidden-imgs {
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease;
+  }
+
+  .hidden-imgs.show {
+    max-height: 1000px; /* พอสำหรับภาพ 2–3 รูป */
+  }
+</style>
     }
   </style>
 
@@ -110,26 +118,27 @@
   <div class="fish-grid">
 
     <!-- มหาชัย -->
-    <div class="fish-card">
-      <h3>มหาชัย</h3>
-      <a href="A1.PNG" data-lightbox="mahachai" data-title="ปลากัดมหาชัย">
-        <img src="A1.PNG" alt="ปลากัดมหาชัย">
-      </a>
+    <!-- มหาชัย -->
+<div class="fish-card">
+  <h3>มหาชัย</h3>
+  <a href="A1.png" data-lightbox="mahachai" data-title="ปลากัดมหาชัย">
+    <img src="A1.png" alt="ปลากัดมหาชัย">
+  </a>
 
-      <div class="hidden-imgs">
-        <a href="A1.PNG" data-lightbox="mahachai" data-title="มุมด้านข้าง"><img src="A1.PNG" alt=""></a>
-        <a href="A2.PNG" data-lightbox="mahachai" data-title="มุมด้านบน"><img src="A2.PNG" alt=""></a>
-        <a href="A3.PNG" data-lightbox="mahachai" data-title="มุมด้านบน"><img src="A3.PNG" alt=""></a>
-        
-       
-      </div>
+  <div class="hidden-imgs" id="mahachai-hidden">
+    <a href="A1.png" data-lightbox="mahachai" data-title="มุมด้านข้าง"><img src="A1.png" alt=""></a>
+    <a href="A2.png" data-lightbox="mahachai" data-title="มุมด้านบน"><img src="A2.png" alt=""></a>
+    <a href="A3.png" data-lightbox="mahachai" data-title="มุมด้านหน้า"><img src="A3.png" alt=""></a>
+  </div>
 
-      <div class="btn-group">
-        <a href="https://m.me/wild.betta.mahachai" target="_blank" class="btn btn-messenger">Messenger</a>
-        <a href="https://wa.me/66800199351" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
-        <a href="https://payhip.com/b/xxxxxx" target="_blank" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
-      </div>
-    </div>
+  <button onclick="toggleImages('mahachai-hidden', this)">ดูรูปเพิ่มเติม</button>
+
+  <div class="btn-group">
+    <a href="https://m.me/wild.betta.mahachai" target="_blank" class="btn btn-messenger">Messenger</a>
+    <a href="https://wa.me/66800199351" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
+    <a href="https://payhip.com/b/xxxxxx" target="_blank" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
+  </div>
+</div>
 
     <!-- อีสาน -->
     <div class="fish-card">
