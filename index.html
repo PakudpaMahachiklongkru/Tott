@@ -4,7 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ปลากัดป่ามหาชัยเขตคลองครุ</title>
-  <style>
+ 
+  
+
+
+ <style>
     body {
       font-family: sans-serif;
       margin: 0;
@@ -76,6 +80,10 @@
       margin-top: 20px;
     }
   </style>
+  <!-- เรียกใช้ Lightbox2 -->
+<link href="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/css/lightbox.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/lightbox2@2/dist/js/lightbox.min.js"></script>
+
 </head>
 <body>
 
@@ -98,15 +106,21 @@
   <div class="fish-grid">
     <div class="fish-card">
       <h3>มหาชัย</h3>
-      <!-- แกลเลอรี่ภาพ -->
-  <div class="gallery">
-    <img src="IMG_4689.png" alt="ปลากัดมหาชัย 1">
-    <img src="IMG_4686.png" alt="ปลากัดมหาชัย 2">
-    <img src="IMG_4366.jpeg" alt="ปลากัดมหาชัย 3">
-    <img src="IMG_4359.jpeg" alt="ปลากัดมหาชัย 4">
-    <img src="IMG_3470.png" alt="ปลากัดมหาชัย 5">
-    <img src="IMG_3469.png" alt="ปลากัดมหาชัย 6">
-  </div>
+       <!-- รูปหน้าปก (ภาพเดียว) -->
+  <a href="IMG_4687.png" data-title="ปลากัดมหาชัย">
+    <img src="mahachai1.jpg" alt="ปลากัดมหาชัย">
+  </a>
+
+  <!-- รูปอื่น ๆ (จะไม่โชว์ แต่ดูได้ตอนสไลด์) -->
+  <a href="IMG_4689.png" data-lightbox="mahachai" data-title="มุมด้านข้าง"></a>
+  <a href="IMG_4980.png" data-lightbox="mahachai" data-title="มุมด้านบน"></a>
+  <a href="IMG_4366.jpeg" data-lightbox="mahachai" data-title="มุมด้านบน"></a>
+  <a href="IMG_4359.jpeg" data-lightbox="mahachai" data-title="มุมด้านบน"></a>
+  <a href="IMG_3470.png" data-lightbox="mahachai" data-title="มุมด้านบน"></a>
+  <a href="IMG_3469.png" data-lightbox="mahachai" data-title="มุมด้านบน"></a>
+  
+  </div> 
+ 
       <div class="btn-group">
         <a href="https://m.me/wild.betta.mahachai" target="_blank" class="btn btn-messenger">Messenger</a>
         <a href="https://wa.me/66800199351" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
