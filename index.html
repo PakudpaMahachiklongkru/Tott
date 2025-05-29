@@ -160,5 +160,18 @@
   &copy; 2025 ปลากัดป่ามหาชัยเขตคลองครุ | ติดต่อเราได้ทุกช่องทาง
 </footer>
 
+<script>
+  function toggleImages(id, btn) {
+    const el = document.getElementById(id);
+    el.classList.toggle('show');
+
+    if (el.classList.contains('show')) {
+      btn.textContent = "ซ่อนรูป";
+    } else {
+      btn.textContent = "ดูรูปเพิ่มเติม";
+    }
+  }
+</script>
+
 </body>
 </html>
