@@ -30,12 +30,16 @@
       text-decoration: none;
       font-weight: bold;
     }
+    nav a:hover {
+      text-decoration: underline;
+    }
     .container {
       padding: 20px;
       max-width: 960px;
       margin: auto;
-      background: rgba(255,255,255,0.95);
+      background: rgba(255, 255, 255, 0.85);
       border-radius: 10px;
+      backdrop-filter: blur(5px);
     }
     .fish-grid {
       display: grid;
@@ -46,8 +50,13 @@
       background: white;
       border-radius: 8px;
       padding: 15px;
-      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
       text-align: center;
+      transition: all 0.3s ease-in-out;
+    }
+    .fish-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
     }
     .fish-card img {
       width: 100%;
@@ -65,6 +74,10 @@
       text-decoration: none;
       border-radius: 5px;
       font-size: 14px;
+      transition: 0.2s;
+    }
+    .btn:hover {
+      opacity: 0.9;
     }
     .btn-messenger { background: #0084ff; }
     .btn-whatsapp  { background: #25D366; }
@@ -81,12 +94,19 @@
       text-decoration: none;
     }
     footer {
+      background: #004d40;
+      color: white;
+      padding: 30px 20px;
       text-align: center;
-      padding: 20px;
       font-size: 14px;
-      color: gray;
-      background: #e0e0e0;
-      margin-top: 20px;
+      margin-top: 40px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      margin-bottom: 10px;
     }
   </style>
 </head>
@@ -99,11 +119,11 @@
 </header>
 
 <nav>
-  <a href="index.html">หน้าแรก</a>
-  <a href="articles.html">บทความ</a>
-  <a href="types.html">สายพันธุ์ปลากัด</a>
-  <a href="developed.html">ปลาพัฒนาสายพันธุ์</a>
-  <a href="#contact">ติดต่อ</a>
+  <a href="index.html">🏠 หน้าแรก</a>
+  <a href="articles.html">📖 บทความ</a>
+  <a href="types.html">🐟 สายพันธุ์ปลากัด</a>
+  <a href="developed.html">🔬 ปลาพัฒนาสายพันธุ์</a>
+  <a href="#contact">📞 ติดต่อ</a>
 </nav>
 
 <div class="container">
@@ -142,8 +162,20 @@
   </div>
 </div>
 
+<!-- Contact Section -->
+<div id="contact" class="container" style="margin-top: 40px;">
+  <h2>📞 ติดต่อเรา</h2>
+  <p>หากคุณสนใจปลากัดป่าคุณภาพจากมหาชัยหรือต้องการสอบถามข้อมูลเพิ่มเติม ติดต่อเราได้ทาง:</p>
+  <ul>
+    <li><strong>Facebook:</strong> <a href="https://facebook.com/wild.betta.mahachai" target="_blank">เพจปลากัดป่ามหาชัยเขตคลองครุ</a></li>
+    <li><strong>โทรศัพท์:</strong> 080-019-9351</li>
+    <li><strong>Email:</strong> wildbetta@mahachai.com</li>
+  </ul>
+</div>
+
 <footer>
-  &copy; 2025 ปลากัดป่ามหาชัยเขตคลองครุ | ติดต่อเราได้ทุกช่องทาง
+  &copy; 2025 ปลากัดป่ามหาชัยเขตคลองครุ<br>
+  พัฒนาและดูแลเว็บไซต์โดยทีมเพาะพันธุ์ปลากัดธรรมชาติคลองครุ
 </footer>
 
 </body>
