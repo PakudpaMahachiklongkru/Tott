@@ -1,39 +1,88 @@
 <!DOCTYPE html>
 <html lang="th">
 <head>
-  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>ปลากัดป่ามหาชัยเขตคลองครุ</title>
   <style>
-    body{font-family:sans-serif;margin:0;background:#f9f9f9;color:#222}
-    header{background:#004d40;color:white;padding:10px;text-align:center}
-    nav{background:#00796b;padding:10px;text-align:center}
-    nav a{color:white;margin:0 10px;text-decoration:none;font-weight:bold}
-    .container{padding:20px;max-width:960px;margin:auto}
-    .fish-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
-    .fish-card{background:white;border-radius:8px;padding:15px;box-shadow:0 0 5px rgba(0,0,0,0.1);text-align:center}
-    .fish-card img{width:100%;border-radius:6px}
-    .btn-group{margin-top:10px}
-    .btn { 
-      display:inline-block;
-      margin: 0 5px 5px 0;
-      padding:8px 12px;
-      color:white;
-      text-decoration:none;
-      border-radius:5px;
-      font-size:14px;n-messenger { background:#0084ff }
-    .btn-whatsapp  { background:#25D366 }
-    .btn-payhip 
-{background: #333;
-  color: white; }
-.btn-payhip:hover 
-{background: #555; }
-    footer{text-align:center;padding:20px;font-size:14px;color:gray;background:#e0e0e0}</head>
+    body {
+      font-family: sans-serif;
+      margin: 0;
+      background: url('your-background.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #222;
+    }
+    header {
+      background: #004d40;
+      color: white;
+      padding: 10px;
+      text-align: center;
+    }
+    nav {
+      background: #00796b;
+      padding: 10px;
+      text-align: center;
+    }
+    nav a {
+      color: white;
+      margin: 0 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .container {
+      padding: 20px;
+      max-width: 960px;
+      margin: auto;
+      background: rgba(255,255,255,0.9);
+      border-radius: 10px;
+    }
+    .fish-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+    .fish-card {
+      background: white;
+      border-radius: 8px;
+      padding: 15px;
+      box-shadow: 0 0 5px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .fish-card img {
+      width: 100%;
+      border-radius: 6px;
+    }
+    .btn-group {
+      margin-top: 10px;
+    }
+    .btn {
+      display: inline-block;
+      margin: 5px 5px 0 0;
+      padding: 8px 12px;
+      color: white;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .btn-messenger { background: #0084ff; }
+    .btn-whatsapp  { background: #25D366; }
+    .btn-payhip    { background: #6666cc; }
+    footer {
+      text-align: center;
+      padding: 20px;
+      font-size: 14px;
+      color: gray;
+      background: #e0e0e0;
+      margin-top: 20px;
+    }
+  </style>
+</head>
 <body>
 
 <header>
   <h1>ปลากัดป่ามหาชัยเขตคลองครุ</h1>
   <p>ฟาร์มปลากัดป่าคุณภาพ | ส่งออกทั่วโลก</p>
-  <img src="logo.jpeg" alt="โลโก้" style="max-height:80px;margin-top:10px">
+  <img src="logo.png" alt="โลโก้" style="max-height:80px; margin-top:10px;">
 </header>
 
 <nav>
@@ -47,83 +96,20 @@
 <div class="container">
   <h2>สายพันธุ์ปลากัดแนะนำ (คลิกเพื่อดูรายละเอียด)</h2>
   <div class="fish-grid">
-    <!-- Mahachai -->
     <div class="fish-card">
-      <a href="fish-mahachai.html">
-        <img src="https://via.placeholder.com/300x200.png?text=Betta+Mahachai" alt="Betta Mahachai">
-        <h3>มหาชัย</h3>
-      </a>
+      <h3>มหาชัย</h3>
+      <img src="mahachai.jpg" alt="ปลากัดมหาชัย">
       <div class="btn-group">
-        <a href="https://m.me/wild.betta.mahachai" targe250104436893288tn btn-messenger">Messenger</a>
+        <a href="https://m.me/yourpage" target="_blank" class="btn btn-messenger">Messenger</a>
         <a href="https://wa.me/66800199351" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
-          <a href="https://payhip.com/b/bvdYS" target="_blank" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
-      </div>
-    </div>
-    <!-- Red Cheek -->
-    <div class="fish-card">
-      <a href="fish-redcheek.html">
-        <img src="https://via.placeholder.com/300x200.png?text=Betta+Red+Cheek" alt="Betta Red Cheek">
-        <h3>แก้มแดง</h3>
-      </a>
-      <div class="btn-group">
-        <a href="https://m.me/wild.betta.mahachai" targe25010443689tn btn-messenger">Messenger</a>
-        <a href="https://wa.me/66800199351" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
-        <a href="https://payhip.com/b/MQ3GZ" target="_blank" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
-      </div>
-    </div>
-    <!-- Southern -->
-    <div class="fish-card">
-      <a href="fish-southern.html">
-        <img src="https://via.placeholder.com/300x200.png?text=Betta+Southern" alt="Betta Southern">
-        <h3>ใต้</h3>
-      </a>
-      <div class="btn-group">
-        <a href="https://m.me/wild.betta.mahachai" target="_blank" class="btn btn-messenger">Messenger</a> 
-        <a href="https://wa.me/66800199351" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
-        <a href="https://payhip.com/b/Zv3hn" target="_blank" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
-      </div>
-    </div>
-    <!-- Eastern -->
-    <div class="fish-card">
-      <a href="fish-eastern.html">
-        <img src="https://via.placeholder.com/300x200.png?text=Betta+Eastern" alt="Betta Eastern">
-        <h3>ตะวันออก</h3>
-      </a>
-      <div class="btn-group">
-        <a href="https://m.me/wild.betta.mahachai" targe250104436893288tn btn-messenger">Messenger</a>
-        <a href="https://wa.me/66800199351" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
-         <a href="https://payhip.com/b/wDiTR" target="_blank" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
-      </div>
-    </div>
-    <!-- Guitar/Isaan -->
-    <div class="fish-card">
-      <a href="fish-guitar.html">
-        <img src="https://via.placeholder.com/300x200.png?text=Betta+Guitar" alt="Betta Guitar">
-        <h3>อีสานหางลาย/กีต้า</h3>
-      </a>
-      <div class="btn-group">
-        <a href="https://m.me/wild.betta.mahachai" targe250104436893288tn btn-messenger">Messenger</a>
-        <a href="https://wa.me/66800199351" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
-        <a href="https://payhip.com/b/NdHWk" target="_blank" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
-      </div>
-    </div>
-    <!-- Alien/Breed -->
-    <div class="fish-card">
-      <a href="fish-alien.html">
-        <img src="https://via.placeholder.com/300x200.png?text=Alien+Betta" alt="Alien Betta">
-        <h3>เอเลี่ยน/บรีด</h3>
-      </a>
-      <div class="btn-group">
-        <a href="https://m.me/wild.betta.mahachai" targe250104436893288tn btn-messenger">Messenger</a>
-        <a href="https://wa.me/66800199351" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
-         <a href="https://payhip.com/b/8bYQe" target="_blank" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
+        <a href="https://payhip.com/b/xxxxxx" target="_blank" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
       </div>
     </div>
   </div>
 </div>
 
 <footer>
-  © 2025 ปลากัดป่ามหาชัยเขตคลองครุ
+  &copy; 2025 ปลากัดป่ามหาชัยเขตคลองครุ | ติดต่อเราได้ทุกช่องทาง
 </footer>
 
 </body>
