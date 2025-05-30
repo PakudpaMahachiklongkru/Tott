@@ -1,10 +1,17 @@
 <!DOCTYPE html>
+<!-- ประกาศว่าใช้ HTML5 -->
+
 <html lang="th" role="document">
+<!-- กำหนดว่าเนื้อหาเป็นภาษาไทย และเพิ่ม role="document" เพื่อช่วย screen reader -->
 
 <head>
+  <!-- ส่วนหัวเว็บไซต์: ข้อมูลพื้นฐาน, SEO, ฟอนต์ และ CSS -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <!-- meta tag สำหรับเปลี่ยนสีแถบเบราว์เซอร์บนมือถือให้เข้ากับธีมเว็บ -->
   <meta name="theme-color" content="#013A63" />
+
   <meta name="description" content="ฟาร์มปลากัดป่ามหาชัย เขตคลองครุ จำหน่ายปลากัดคุณภาพ ส่งทั่วโลก" />
   <meta name="keywords" content="ปลากัดป่า, มหาชัย, ปลากัดอีสาน, Betta, ปลากัดส่งออก" />
   <meta name="author" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
@@ -18,7 +25,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Mahachai Wild Betta" />
 
-  <!-- แชร์บน Twitter -->
+  <!-- แชร์บน Twitter แบบละเอียดขึ้น -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
   <meta name="twitter:description" content="ฟาร์มปลากัดป่าคุณภาพ ส่งออกทั่วโลก" />
@@ -27,13 +34,19 @@
 
   <title>ปลากัดป่ามหาชัยเขตคลองครุ | Mahachai Wild Betta</title>
 
+  <!-- ไอคอนบนแท็บเบราว์เซอร์ -->
+  <!-- favicon .ico สำหรับเบราว์เซอร์ทั่วไป -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <!-- favicon .png สำหรับอุปกรณ์ที่รองรับ -->
   <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png" />
   <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png" />
+  <!-- Apple Touch Icon สำหรับไอคอนเวลาบันทึกหน้าเว็บบนมือถือ -->
   <link rel="apple-touch-icon" href="apple-touch-icon.png" />
 
+  <!-- ฟอนต์ภาษาไทย Sarabun -->
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet" />
 
+  <!-- ปรับแต่งหน้าจอมือถือให้สวยขึ้น -->
   <style>
     body {
       font-family: 'Sarabun', sans-serif;
@@ -64,20 +77,23 @@
       flex-wrap: wrap;
       background: #028090;
       padding: 6px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
       font-size: 0.9rem;
     }
 
     nav a {
+      display: inline-block;
       padding: 8px 15px;
       margin: 5px 6px;
       color: white;
       text-decoration: none;
       font-weight: 700;
       border-radius: 6px;
-      transition: 0.3s;
+      transition: background-color 0.3s, color 0.3s;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a:focus {
       background: #9AE3D0;
       color: #003049;
     }
@@ -109,6 +125,7 @@
 
     .fish-card:hover {
       transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     }
 
     .fish-card img {
@@ -116,7 +133,7 @@
       max-height: 350px;
       object-fit: cover;
       border-radius: 8px;
-      cursor: pointer;
+      loading: lazy; /* ให้รูปโหลดแบบ lazy */
     }
 
     .btn-group {
@@ -136,6 +153,11 @@
       font-weight: 600;
       white-space: nowrap;
       flex-shrink: 0;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      opacity: 0.9;
     }
 
     .btn-messenger {
@@ -158,6 +180,15 @@
       font-size: 0.9rem;
     }
 
+    #contact ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    #contact li {
+      margin-bottom: 10px;
+    }
+
     .back-to-top {
       position: fixed;
       bottom: 20px;
@@ -166,8 +197,14 @@
       color: white;
       padding: 10px 15px;
       border-radius: 50%;
-      font-size: 20px;
       text-decoration: none;
+      font-size: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-to-top:hover {
+      background: #ADE8F4;
+      color: black;
     }
 
     #google_translate_element {
@@ -175,45 +212,39 @@
       bottom: 10px;
       left: 10px;
       z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
       background: white;
       padding: 5px 8px;
-      border-radius: 6px;
     }
 
-    /* Lightbox แบบง่าย */
-    .lightbox {
-      display: none;
-      position: fixed;
-      z-index: 2000;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      background-color: rgba(0, 0, 0, 0.85);
-      justify-content: center;
-      align-items: center;
-    }
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
 
-    .lightbox img {
-      max-width: 90%;
-      max-height: 80%;
-      border: 5px solid white;
-      border-radius: 10px;
-    }
+      .btn-group {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-    .lightbox:target {
-      display: flex;
+      nav a {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
 
 <body>
+  <!-- ส่วนหัวเว็บ -->
   <header role="banner">
     <h1>ปลากัดป่ามหาชัยเขตคลองครุ</h1>
     <p>ฟาร์มปลากัดป่าคุณภาพ | ส่งออกทั่วโลก</p>
+    <!-- รูปโลโก้โหลดแบบ lazy -->
     <img src="https://example.com/images/Logo.jpeg" alt="โลโก้ Mahachai Betta" loading="lazy" />
   </header>
 
+  <!-- เมนูนำทาง พร้อม aria-label เพื่อช่วยผู้ใช้ screen reader -->
   <nav role="navigation" aria-label="เมนูหลัก">
     <a href="index.html">🏠 หน้าแรก</a>
     <a href="articles.html">📖 บทความ</a>
@@ -221,48 +252,102 @@
     <a href="contact.html">📞 ติดต่อเรา</a>
   </nav>
 
+  <!-- เนื้อหาหลัก -->
   <main role="main" class="container" aria-label="เนื้อหาหลักเว็บไซต์">
     <section aria-labelledby="species-heading">
       <h2 id="species-heading">สายพันธุ์ปลากัดป่าหลัก</h2>
       <div class="fish-grid">
-        <article class="fish-card">
-          <a href="#img1">
-            <img src="https://example.com/images/A1.png" alt="ปลากัดมหาชัย" />
-          </a>
+        <article class="fish-card" role="article" aria-label="ปลากัดมหาชัย">
+          <!-- ภาพที่คลิกได้ -->
+<img src="images/A1.png" alt="ปลากัดมหาชัย" onclick="openLightbox('images/A1-2.jpg')" style="cursor: pointer;" loading="lazy" />
+
+<img src="images/A1.png" alt="ปลากัดมหาชัย" 
+     onclick="openLightbox('images/A1-2.jpg')" 
+     onerror="this.onerror=null; this.src='images/backup.jpg';"
+     style="cursor: pointer;" loading="lazy" />
+     
+<p><a href="#" onclick="openLightbox('images/A1-2.jpg'); return false;">ดูรูปเพิ่มเติม</a></p>
+
           <h3>ปลากัดมหาชัย</h3>
           <p>สายพันธุ์ปลากัดป่าจากมหาชัย น้ำใส สีสันสวยงาม</p>
-          <div class="btn-group">
-            <a href="https://m.me/your_messenger_id" class="btn btn-messenger" target="_blank">Messenger</a>
-            <a href="https://wa.me/your_whatsapp_number" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
-            <a href="https://payhip.com/your_payhip_store" class="btn btn-payhip" target="_blank">Payhip</a>
+          <div class="btn-group" role="group" aria-label="ลิงก์สั่งซื้อและติดต่อ">
+            <a href="https://m.me/your_messenger_id" class="btn btn-messenger" aria-label="ติดต่อผ่าน Messenger" target="_blank" rel="noopener noreferrer">Messenger</a>
+            <a href="https://wa.me/your_whatsapp_number" class="btn btn-whatsapp" aria-label="ติดต่อผ่าน WhatsApp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://payhip.com/your_payhip_store" class="btn btn-payhip" aria-label="สั่งซื้อผ่าน Payhip" target="_blank" rel="noopener noreferrer">Payhip</a>
           </div>
         </article>
+
+        <!-- ใส่การ์ดปลาตัวอื่น ๆ เช่นเดียวกัน -->
+
       </div>
     </section>
   </main>
 
+  <!-- ฟุตเตอร์เว็บไซต์ -->
   <footer role="contentinfo">
     <p>ลิขสิทธิ์ © 2025 ปลากัดป่ามหาชัยเขตคลองครุ</p>
   </footer>
 
-  <a href="#top" class="back-to-top">⬆️</a>
+  <!-- ปุ่มกลับขึ้นบน -->
+  <a href="#top" class="back-to-top" aria-label="กลับขึ้นบน">⬆️</a>
 
-  <div id="google_translate_element"></div>
-
-  <!-- รูปแสดงเพิ่มเติมแบบป็อปอัป -->
-  <div id="img1" class="lightbox">
-    <a href="#"><img src="https://example.com/images/A1-2.jpg" alt="ภาพเพิ่มเติม ปลากัดมหาชัย" /></a>
-  </div>
+  <!-- Google Translate widget -->
+  <div id="google_translate_element" role="complementary" aria-label="เครื่องมือแปลภาษา"></div>
 
   <script type="text/javascript">
-    function googleTranslateElementInit() {
-      new google.translate.TranslateElement(
-        { pageLanguage: 'th', includedLanguages: 'en,th', layout: google.translate.TranslateElement.InlineLayout.SIMPLE },
-        'google_translate_element'
-      );
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement(
+      {
+        pageLanguage: 'th',
+        includedLanguages: 'en,th',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      },
+      'google_translate_element'
+    );
+  }
+
+  // รอให้หน้าเว็บโหลดเสร็จทั้งหมดก่อนค่อยเพิ่ม Event Listener ให้กับ lightbox
+  window.onload = function () {
+    const lightbox = document.getElementById("lightbox");
+    if (lightbox) {
+      lightbox.addEventListener("click", function (e) {
+        if (e.target.id === "lightbox") {
+          closeLightbox();
+        }
+      });
     }
-  </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+  };
+
+  // ฟังก์ชันเปิด-ปิด lightbox (ถ้ายังไม่มี)
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+  <!-- Lightbox ป๊อปอัป -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999;">
+  <span onclick="closeLightbox()" style="position:absolute; top:20px; right:30px; color:white; font-size:30px; cursor:pointer;">&times;</span>
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border-radius:10px;" />
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
 </body>
 
 </html>
