@@ -8,7 +8,7 @@
   <meta name="description" content="ฟาร์มปลากัดป่ามหาชัย เขตคลองครุ จำหน่ายปลากัดคุณภาพ ส่งทั่วโลก" />
   <meta name="keywords" content="ปลากัดป่า, มหาชัย, ปลากัดอีสาน, Betta, ปลากัดส่งออก" />
   <meta name="author" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
-  <meta name="robots" content="index, follow" />
+ 
   <meta name="theme-color" content="#00695c"> 
 
   <!-- แชร์บน Facebook -->
@@ -274,18 +274,18 @@
         <a href="mahachai.html">
           <img src="A1.PNG" alt="ปลากัดมหาชัย" style="cursor: pointer;" onclick="openLightbox(this.src)" />
         </a>
-        <h3>มหาชัย<br><small>Mahachaiensis</small></h3>
-        <a href="mahachai.html" class="btn btn-payhip">ดูรูปเพิ่มเติม</a>
-        <div class="btn-group">
-          <a href="https://m.me/yourpage" class="btn btn-messenger" target="_blank" rel="noopener">Messenger</a>
-          <a href="https://wa.me/66800199351" class="btn btn-WhatsApp" target="_blank" rel="noopener">WhatsApp</a>
-          
-          <a href="https://payhip.com/yourstore" class="btn btn-ซื้อผ่าน Payhip" target="_blank" rel="noopener">ซื้อผ่าน Payhip</a>
-           payhip.com
-        </div>
-      </div>
+        
+ <div class="fish-card">
+  <h3>มหาชัย<br><small>Mahachaiensis</small></h3>
+  <a href="mahachai.html" class="btn btn-payhip">ดูรูปเพิ่มเติม</a>
+  <div class="btn-group">
+    <a href="https://m.me/yourpage" class="btn btn-messenger" target="_blank" rel="noopener">Messenger</a>
+    <a href="https://wa.me/66800199351" class="btn btn-whatsapp" target="_blank" rel="noopener">WhatsApp</a>
+    <a href="https://payhip.com/yourstore" class="btn btn-payhip" target="_blank" rel="noopener">ซื้อผ่าน Payhip</a>
+  </div>
+</div>
 
-      <div class="fish-card">
+     <div class="fish-card">
         <h3>อีสานหางลาย / กีต้า<br><small>Isan Gitta</small></h3>
         <a href="isan.jpg"><img src="isan.jpg" alt="ปลากัดอีสาน" /></a>
         <div class="btn-group">
@@ -468,6 +468,38 @@
 <script type="text/javascript"
   src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 </script>
+
+<!-- Lightbox (เปิดรูปเต็มเมื่อคลิก) -->
+<div id="lightbox" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); align-items:center; justify-content:center;">
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%;" />
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+  document.getElementById('lightbox').addEventListener('click', function () {
+    this.style.display = 'none';
+  });
+</script>
+
+  </script>
+
+  <!-- Google Translate -->
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'th',
+        includedLanguages: 'en',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+  <!-- ตำแหน่งของ Google Translate ปุ่มแปลภาษา -->
+  <div id="google_translate_element"></div>
 
 </body>
 </html>
