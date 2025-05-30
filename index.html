@@ -13,17 +13,38 @@
   <meta name="keywords" content="ปลากัดป่า, มหาชัย, ปลากัดอีสาน, Betta, ปลากัดส่งออก" />
   <meta name="author" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
   <meta name="robots" content="index, follow" />
-
+  <meta name="theme-color" content="#00695c"> 
+  <!-- เขียวเข้มแบบธรรมชาติ -->
+  
   <!-- แชร์บน Facebook -->
   <meta property="og:title" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
   <meta property="og:description" content="ฟาร์มปลากัดป่าคุณภาพ ส่งออกทั่วโลก" />
-  <meta property="og:image" content="Logo.jpeg" />
+  <meta property="og:image" content="https://yourdomain.com/Logo.jpeg" />
   <meta property="og:url" content="https://example.com" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Mahachai Wild Betta" />
-
   <!-- แชร์บน Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
+  
+  <link rel="icon" href="favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PetStore",
+  "name": "ปลากัดป่ามหาชัยเขตคลองครุ",
+  "description": "จำหน่ายปลากัดป่าหลากหลายสายพันธุ์ พร้อมบริการส่งทั่วประเทศ",
+  "url": "https://your-website-url.com",
+  "image": "https://your-website-url.com/logo.png",
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "TH"
+  }
+}
+</script>
 
   <title>ปลากัดป่ามหาชัยเขตคลองครุ | Mahachai Wild Betta</title>
 
@@ -221,7 +242,7 @@
   </style>
 </head>
 
-<body>
+<body id="top">
   <!-- ส่วนหัวเว็บ -->
   <header>
     <h1>ปลากัดป่ามหาชัยเขตคลองครุ</h1>
@@ -325,7 +346,9 @@
       }, 'google_translate_element');
     }
   </script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
+  script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
   
   <!-- Lightbox ป๊อปอัป -->
 <div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
@@ -342,6 +365,44 @@
 
    function closeLightbox() {
     document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
+<script>
+document.addEventListener('click', function(event) {
+  const lightbox = document.querySelector('.lightbox'); // class ของ lightbox
+  if (lightbox && event.target === lightbox) {
+    lightbox.style.display = 'none';
+  }
+});
+</script>
+
+<!-- Lightbox พื้นฐาน -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+  background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border: 5px solid white; border-radius: 8px;" />
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
+<!-- Lightbox Modal -->
+<div id="lightbox-modal" style="display:none; position:fixed; z-index:10000; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;" onclick="this.style.display='none'">
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%;" />
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox-modal").style.display = "flex";
   }
 </script>
 
