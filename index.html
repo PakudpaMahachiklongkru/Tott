@@ -1,44 +1,39 @@
-แถบเมนูเรียง
-
-<!-- ประกาศว่าไฟล์นี้เป็น HTML5 -->
 <!DOCTYPE html>
-<!-- เริ่มต้นหน้า HTML และระบุว่าใช้ภาษาไทย -->
+<!-- ประกาศว่าไฟล์นี้ใช้มาตรฐาน HTML5 -->
+
 <html lang="th">
+<!-- ระบุว่าใช้ภาษาไทยในเนื้อหาเว็บ -->
 
 <head>
-  <!-- กำหนดชุดอักขระเป็น UTF-8 -->
+  <!-- ส่วนหัวเว็บไซต์: ตั้งค่าพื้นฐาน, SEO, Social Media, ฟอนต์, และ CSS -->
+
   <meta charset="UTF-8" />
-  <!-- รองรับการแสดงผลแบบ Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <!-- SEO -->
   <meta name="description" content="ฟาร์มปลากัดป่ามหาชัย เขตคลองครุ จำหน่ายปลากัดคุณภาพ ส่งทั่วโลก" />
   <meta name="keywords" content="ปลากัดป่า, มหาชัย, ปลากัดอีสาน, Betta, ปลากัดส่งออก" />
   <meta name="author" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
   <meta name="robots" content="index, follow" />
-
-  <!-- แชร์ Facebook -->
+  <!-- Open Graph สำหรับการแชร์บน Facebook -->
   <meta property="og:title" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
   <meta property="og:description" content="ฟาร์มปลากัดป่าคุณภาพ ส่งออกทั่วโลก" />
   <meta property="og:image" content="Logo.jpeg" />
   <meta property="og:url" content="https://example.com" />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Mahachai Wild Betta" />
-
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- ชื่อเว็บบนแท็บ -->
   <title>ปลากัดป่ามหาชัยเขตคลองครุ</title>
-  <!-- ไอคอน -->
+
+  <!-- ไอคอนบนแท็บเบราว์เซอร์ -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-  <!-- ฟอนต์จาก Google Fonts -->
+  <!-- ฟอนต์ภาษาไทย Sarabun -->
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet" />
 
-  <!-- CSS สไตล์ -->
   <style>
-    /* ตั้งค่าทั่วไปของเว็บไซต์ */
+    /* ---------- ส่วนจัดการสไตล์ทั้งหมดของเว็บ ---------- */
+
     body {
       font-family: 'Sarabun', sans-serif;
       margin: 0;
@@ -46,13 +41,12 @@
       color: #333;
     }
 
-    /* ส่วนหัวเว็บ */
     header {
       text-align: center;
       background: #005f73;
       color: white;
       padding: 20px 10px;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     header img {
@@ -61,45 +55,45 @@
       margin-top: 10px;
     }
 
-    /* เมนูแนวนอน บรรทัดเดียว */
     nav {
       display: flex;
-      overflow-x: auto;
-      white-space: nowrap;
-      background: #0a9396;
-      padding: 10px 0;
       justify-content: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      -webkit-overflow-scrolling: touch;
+      flex-wrap: wrap;
+      background: #0a9396;
+      padding: 6px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow-x: hidden;
+      user-select: none;
+      font-size: 0.9rem;
     }
 
     nav a {
       display: inline-block;
-      padding: 12px 20px;
-      margin: 0 5px;
+      padding: 8px 15px;
+      margin: 5px 6px;
       color: white;
       text-decoration: none;
-      font-weight: bold;
+      font-weight: 700;
       border-radius: 6px;
-      transition: 0.3s;
+      transition: background-color 0.3s, color 0.3s;
+      white-space: nowrap;
     }
 
-    nav a:hover {
+    nav a:hover,
+    nav a:focus {
       background: #94d2bd;
       color: #000;
     }
 
-    /* กล่องเนื้อหา */
     .container {
       padding: 20px;
       max-width: 1000px;
       margin: auto;
       background: white;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
 
-    /* การจัดวางของการ์ดปลา */
     .fish-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -112,7 +106,13 @@
       padding: 15px;
       border-radius: 8px;
       text-align: center;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .fish-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
     }
 
     .fish-card img {
@@ -124,21 +124,39 @@
 
     .btn-group {
       margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: nowrap; /* บังคับให้อยู่บรรทัดเดียว */
+      overflow-x: auto; /* ถ้าแคบเกินให้เลื่อนด้านข้าง */
     }
 
     .btn {
-      display: inline-block;
       padding: 8px 12px;
-      margin: 5px 3px;
-      background: #0077b6;
       color: white;
       border-radius: 5px;
       text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s, color 0.3s;
+      white-space: nowrap;
+      flex-shrink: 0; /* ไม่ให้ปุ่มย่อขนาด */
     }
 
-    .btn:hover {
-      background: #90e0ef;
-      color: #000;
+    .btn:hover,
+    .btn:focus {
+      opacity: 0.9;
+    }
+
+    .btn-messenger {
+      background: #0084FF;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+    }
+
+    .btn-payhip {
+      background: #6A1B9A;
     }
 
     footer {
@@ -146,6 +164,7 @@
       padding: 20px;
       background: #001219;
       color: white;
+      font-size: 0.9rem;
     }
 
     #contact ul {
@@ -167,115 +186,126 @@
       border-radius: 50%;
       text-decoration: none;
       font-size: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     }
 
     .back-to-top:hover {
       background: #90e0ef;
       color: black;
     }
+
+    #google_translate_element {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      background: white;
+      padding: 5px 8px;
+    }
   </style>
 </head>
 
 <body>
+  <!-- ส่วนหัวเว็บ -->
+  <header>
+    <h1>ปลากัดป่ามหาชัยเขตคลองครุ</h1>
+    <p>ฟาร์มปลากัดป่าคุณภาพ | ส่งออกทั่วโลก</p>
+    <img src="Logo.jpeg" alt="โลโก้" loading="lazy" />
+  </header>
 
-<!-- ส่วนหัวเว็บไซต์ -->
-<header>
-  <h1>ปลากัดป่ามหาชัยเขตคลองครุ</h1>
-  <p>ฟาร์มปลากัดป่าคุณภาพ | ส่งออกทั่วโลก</p>
-  <img src="Logo.jpeg" alt="โลโก้" loading="lazy">
-</header>
+  <!-- เมนูนำทาง -->
+  <nav>
+    <a href="index.html">🏠 หน้าแรก</a>
+    <a href="articles.html">📖 บทความ</a>
+    <a href="types.html">🐟 สายพันธุ์ปลากัด</a>
+    <a href="developed.html">🔬 ปลาพัฒนาสายพันธุ์</a>
+    <a href="#contact">📞 ติดต่อ</a>
+  </nav>
 
-<!-- เมนูหลัก (แนวนอนบรรทัดเดียว) -->
-<nav>
-  <a href="index.html">🏠 หน้าแรก</a>
-  <a href="articles.html">📖 บทความ</a>
-  <a href="types.html">🐟 สายพันธุ์ปลากัด</a>
-  <a href="developed.html">🔬 ปลาพัฒนาสายพันธุ์</a>
-  <a href="#contact">📞 ติดต่อ</a>
-</nav>
-
-<!-- เนื้อหาหลัก -->
-<main class="container">
-  <div style="background: #e6fffa; padding: 10px; border-left: 5px solid #00b4d8; margin-bottom: 20px;">
-    ✅ รับประกันคุณภาพ | 🌏 ส่งออกทั่วโลก | 🧬 เก็บสายพันธุ์แท้จากธรรมชาติ
-  </div>
-
-  <h2>สายพันธุ์ปลากัดแนะนำ (คลิกเพื่อดูรูปเพิ่มเติม)</h2>
-
-  <div class="fish-grid">
-    <div class="fish-card">
-      <h3>มหาชัย</h3>
-      <a href="A1.png"><img src="A1.png" alt="ปลากัดมหาชัย" loading="lazy"></a>
-      <a href="mahachai.html" class="btn">ดูรูปเพิ่มเติม</a>
-      <div class="btn-group">
-        <a href="https://m.me/yourpage" class="btn">Messenger</a>
-        <a href="https://wa.me/66800199351" class="btn">WhatsApp</a>
-        <a href="https://payhip.com/yourstore" class="btn">ซื้อผ่าน Payhip</a>
-      </div>
+  <!-- เนื้อหาหลัก -->
+  <main class="container">
+    <div style="background: #e6fffa; padding: 10px; border-left: 5px solid #00b4d8; margin-bottom: 20px;">
+      ✅ รับประกันคุณภาพ | 🌏 ส่งออกทั่วโลก | 🧬 เก็บสายพันธุ์แท้จากธรรมชาติ
     </div>
 
-    <div class="fish-card">
-      <h3>อีสานหางลาย / กีต้า</h3>
-      <a href="isan.jpg"><img src="isan.jpg" alt="ปลากัดอีสาน" loading="lazy"></a>
-      <div class="btn-group">
-        <a href="https://m.me/yourpage" class="btn">Messenger</a>
-        <a href="https://wa.me/66800199351" class="btn">WhatsApp</a>
-        <a href="https://payhip.com/yourstore" class="btn">ซื้อผ่าน Payhip</a>
+    <h2>สายพันธุ์ปลากัดแนะนำ (คลิกเพื่อดูรูปเพิ่มเติม)</h2>
+
+    <div class="fish-grid">
+      <div class="fish-card">
+        <h3>มหาชัย</h3>
+        <a href="A1.png"><img src="A1.png" alt="ปลากัดมหาชัย" loading="lazy" /></a>
+        <a href="mahachai.html" class="btn btn-payhip">ดูรูปเพิ่มเติม</a>
+        <div class="btn-group">
+          <a href="https://m.me/yourpage" class="btn btn-messenger">Messenger</a>
+          <a href="https://wa.me/66800199351" class="btn btn-whatsapp">WhatsApp</a>
+          <a href="https://payhip.com/yourstore" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
+        </div>
+      </div>
+
+      <div class="fish-card">
+        <h3>อีสานหางลาย / กีต้า</h3>
+        <a href="isan.jpg"><img src="isan.jpg" alt="ปลากัดอีสาน" loading="lazy" /></a>
+        <div class="btn-group">
+          <a href="https://m.me/yourpage" class="btn btn-messenger">Messenger</a>
+          <a href="https://wa.me/66800199351" class="btn btn-whatsapp">WhatsApp</a>
+          <a href="https://payhip.com/yourstore" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
+        </div>
       </div>
     </div>
+  </main>
+
+  <!-- ติดต่อเรา -->
+  <div id="contact" class="container">
+    <h2>📞 ติดต่อเรา</h2>
+    <p>หากคุณสนใจปลากัดป่าคุณภาพ ติดต่อเราได้ตามช่องทางด้านล่าง</p>
+    <ul>
+      <li><strong>Facebook:</strong> <a href="https://facebook.com/yourpage">เพจปลากัด...</a></li>
+      <li><strong>โทรศัพท์:</strong> 080-019-9351</li>
+      <li><strong>Email:</strong> wildbettamahachaikhetklongkru@mahachai.com</li>
+    </ul>
   </div>
-</main>
 
-<!-- ส่วนติดต่อ -->
-<div id="contact" class="container">
-  <h2>📞 ติดต่อเรา</h2>
-  <p>หากคุณสนใจปลากัดป่าคุณภาพ ติดต่อเราได้ตามช่องทางด้านล่าง</p>
-  <ul>
-    <li><strong>Facebook:</strong> <a href="https://facebook.com/yourpage">เพจปลากัด...</a></li>
-    <li><strong>โทรศัพท์:</strong> 080-019-9351</li>
-    <li><strong>Email:</strong> wildbettamahachaikhetklongkru@mahachai.com</li>
-  </ul>
-</div>
+  <!-- ท้ายเว็บ -->
+  <footer>
+    &copy; 2025 ปลากัดป่ามหาชัยเขตคลองครุ<br />
+    พัฒนาและดูแลโดยทีมเพาะพันธุ์ในพื้นที่
+  </footer>
 
-<!-- ส่วนท้ายเว็บ -->
-<footer>
-  &copy; 2025 ปลากัดป่ามหาชัยเขตคลองครุ<br>
-  พัฒนาและดูแลโดยทีมเพาะพันธุ์ในพื้นที่
-</footer>
+  <!-- ปุ่มเลื่อนขึ้นบนสุด -->
+  <a href="#" class="back-to-top" title="เลื่อนขึ้นบน">⬆️</a>
 
-<!-- ปุ่มกลับไปบน -->
-<a href="#" class="back-to-top" title="เลื่อนขึ้นบน">⬆️</a>
+  <!-- ระบบแชตสด Tawk.to -->
+  <script type="text/javascript">
+    var Tawk_API = Tawk_API || {};
+    Tawk_API.onLoad = function () {
+      Tawk_API.setAttributes({
+        'language': 'th',
+        'nickname': 'ผู้เยี่ยมชม | Visitor',
+      }, function (error) { });
+    };
+    (function () {
+      var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+      s1.async = true;
+      s1.src = 'https://embed.tawk.to/6838c455c1b21a190c027386/1isertsf5';
+      s1.charset = 'UTF-8';
+      s1.setAttribute('crossorigin', '*');
+      s0.parentNode.insertBefore(s1, s0);
+    })();
+  </script>
 
-<!-- แชทสด Tawk.to -->
-<script type="text/javascript">
-  var Tawk_API = Tawk_API || {};
-  Tawk_API.onLoad = function () {
-    Tawk_API.setAttributes({
-      'language': 'th',
-      'nickname': 'ผู้เยี่ยมชม | Visitor',
-    }, function (error) { });
-  };
-  (function () {
-    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-    s1.async = true;
-    s1.src = 'https://embed.tawk.to/6838c455c1b21a190c027386/1isertsf5';
-    s1.charset = 'UTF-8';
-    s1.setAttribute('crossorigin', '*');
-    s0.parentNode.insertBefore(s1, s0);
-  })();
-</script>
-
-<!-- Google Translate -->
-<div id="google_translate_element" style="position: fixed; bottom: 10px; left: 10px;"></div>
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'th',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
+  <!-- Google Translate -->
+  <div id="google_translate_element"></div>
+  <script type="text/javascript">
+    function googleTranslateElementInit() {
+      new google.translate.TranslateElement({
+        pageLanguage: 'th',
+        layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+      }, 'google_translate_element');
+    }
+  </script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
+
 </html>
