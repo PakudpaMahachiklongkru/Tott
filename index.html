@@ -345,9 +345,32 @@
         layout: google.translate.TranslateElement.InlineLayout.SIMPLE
       }, 'google_translate_element');
     }
+    
+    <!-- Google Translate -->
+<div id="google_translate_element"></div>
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'th',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+      <!-- โหลดสคริปต์ Google Translate -->
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+</body>
+</html>
+
+  <script type="text/javascript"
+    src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+  </script>
+</body>
+</html>
+
   </script>
   
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+  
   
   
   <!-- Lightbox ป๊อปอัป -->
@@ -383,6 +406,24 @@ document.addEventListener('click', function(event) {
   <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border: 5px solid white; border-radius: 8px;" />
 </div>
 
+<!-- Lightbox พื้นฐาน -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+  background:rgba(0,0,0,0.8); z-index:9999; justify-content:center; align-items:center;" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border: 5px solid white; border-radius: 8px;" />
+</div>
+
+<!-- ✅ วาง JavaScript ตรงนี้ -->
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
+
 <script>
   function openLightbox(src) {
     document.getElementById("lightbox-img").src = src;
@@ -406,5 +447,201 @@ document.addEventListener('click', function(event) {
   }
 </script>
 
+<script>
+    function openLightbox(src) {
+      // สร้าง overlay
+      const overlay = document.createElement('div');
+      overlay.id = 'lightboxOverlay';
+      overlay.style.position = 'fixed';
+      overlay.style.top = 0;
+      overlay.style.left = 0;
+      overlay.style.width = '100vw';
+      overlay.style.height = '100vh';
+      overlay.style.background = 'rgba(0, 0, 0, 0.8)';
+      overlay.style.display = 'flex';
+      overlay.style.justifyContent = 'center';
+      overlay.style.alignItems = 'center';
+      overlay.style.zIndex = '9999';
+
+      // สร้างรูปภาพ
+      const img = document.createElement('img');
+      img.src = src;
+      img.style.maxWidth = '90%';
+      img.style.maxHeight = '90%';
+      img.style.borderRadius = '8px';
+      img.style.boxShadow = '0 0 20px rgba(255,255,255,0.4)';
+      img.alt = 'ดูรูปเพิ่มเติม';
+
+      // ปิดเมื่อคลิกนอกภาพ
+      overlay.addEventListener('click', () => {
+        document.body.removeChild(overlay);
+      });
+
+      overlay.appendChild(img);
+      document.body.appendChild(overlay);
+    }
+  </script>
+  
+  <!-- Lightbox สำหรับแสดงภาพเมื่อคลิก -->
+<div id="lightbox" style="display:none; position:fixed; z-index:2000; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center;">
+  <span onclick="closeLightbox()" style="position:absolute; top:20px; right:30px; font-size:40px; color:white; cursor:pointer;">&times;</span>
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border: 4px solid white; border-radius: 10px;" />
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+    document.getElementById('lightbox-img').src = '';
+  }
+
+  // กด Esc เพื่อปิด lightbox
+  document.addEventListener('keydown', function(event) {
+    if (event.key === 'Escape') {
+      closeLightbox();
+    }
+  });
+</script>
+
+<!-- Lightbox รูปภาพ -->
+<div id="lightbox" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); text-align:center;">
+  <span onclick="closeLightbox()" style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer;">&times;</span>
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; margin-top:5vh;" />
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").style.display = "block";
+  }
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+  
+</script>
+<!-- Lightbox แสดงภาพเมื่อคลิก -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:10000;" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border:5px solid white; border-radius:10px;" />
+</div>
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
+<!-- Lightbox ดูภาพเต็ม -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:10000;" onclick="closeLightbox()">
+  <button onclick="closeLightbox()" style="position:absolute; top:20px; right:30px; font-size:30px; color:white; background:none; border:none;">&times;</button>
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border:5px solid white; border-radius:10px;" />
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+  function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
+<!-- Lightbox แบบพื้นฐาน -->
+<div id="lightbox" style="display:none;position:fixed;z-index:9999;top:0;left:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center;">
+  <img id="lightbox-img" src="" style="max-width:90%;max-height:90%;border:4px solid white;border-radius:10px;" />
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+  document.getElementById("lightbox").onclick = function () {
+    this.style.display = "none";
+  };
+</script>
+
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
+
+<!-- Lightbox พื้นฐาน -->
+<div id="lightbox" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background-color: rgba(0,0,0,0.8);" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" style="display:block; max-width:90%; max-height:90%; margin: 5% auto; box-shadow: 0 0 20px #fff; border-radius: 8px;" />
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'block';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
+
+<!-- Lightbox ฟังก์ชันแสดงภาพเมื่อคลิก -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:9999;">
+  <img id="lightbox-img" src="" alt="ภาพขยาย" style="max-width:90%; max-height:90%; box-shadow:0 0 10px #fff; border-radius:8px;">
+</div>
+
+<script>
+  // แสดงภาพใน Lightbox
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+<!-- Lightbox แบบง่าย -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; 
+  background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:2000;" onclick="closeLightbox()">
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border:5px solid white; border-radius:10px;" />
+</div>
+
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
+  // ปิด Lightbox เมื่อคลิกที่พื้นหลัง
+  document.getElementById("lightbox").addEventListener("click", function () {
+    this.style.display = "none";
+  });
+</script>
+
+<!-- Lightbox viewer -->
+<div id="lightbox" onclick="closeLightbox()" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background-color:rgba(0,0,0,0.85); justify-content:center; align-items:center;">
+  <img id="lightbox-img" src="" alt="lightbox" style="max-width:90%; max-height:90%; border: 4px solid white; border-radius: 10px;" />
+</div>
+
+<!-- Lightbox script -->
+<script>
+  function openLightbox(src) {
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    lightboxImg.src = src;
+    lightbox.style.display = 'flex';
+  }
+
+  function closeLightbox() {
+    document.getElementById('lightbox').style.display = 'none';
+  }
+</script>
+
+</body>
+</html>  
