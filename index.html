@@ -232,6 +232,18 @@
         font-size: 0.8rem;
       }
     }
+    
+    #google_translate_element {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  background: white;
+  padding: 5px 8px;
+}
+
   </style>
 </head>
 
@@ -438,6 +450,23 @@
   document.getElementById('lightbox').onclick = function () {
     this.style.display = 'none';
   };
+</script>
+
+<!-- Google Translate -->
+<div id="google_translate_element"></div>
+
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'th',
+      includedLanguages: 'en,th',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
+
+<script type="text/javascript"
+  src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 </script>
 
 </body>
