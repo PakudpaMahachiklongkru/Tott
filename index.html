@@ -1,122 +1,159 @@
 <!DOCTYPE html>
 <html lang="th">
+
 <head>
+  <!-- บอกเบราว์เซอร์ว่าใช้ชุดรหัส UTF-8 และรองรับมือถือ -->
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="ฟาร์มปลากัดป่ามหาชัยเขตคลองครุ จำหน่ายปลากัดป่าคุณภาพ ส่งออกทั่วโลก พร้อมสายพันธุ์แท้และปลาบรีด" />
-  <meta name="keywords" content="ปลากัดป่า, ปลากัดมหาชัย, ปลากัดไทย, Betta Mahachaiensis, Wild Betta Thailand" />
-  <meta name="author" content="ทีมเพาะพันธุ์ปลากัดธรรมชาติคลองครุ" />
+  
+  <!-- ข้อมูล SEO -->
+  <meta name="description" content="ฟาร์มปลากัดป่ามหาชัย เขตคลองครุ จำหน่ายปลากัดคุณภาพ ส่งทั่วโลก" />
+  <meta name="keywords" content="ปลากัดป่า, มหาชัย, ปลากัดอีสาน, Betta, ปลากัดส่งออก" />
+  <meta name="author" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
   <meta name="robots" content="index, follow" />
 
+  <!-- ข้อมูลเมื่อแชร์บน Facebook -->
   <meta property="og:title" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
-  <meta property="og:description" content="ฟาร์มปลากัดป่าคุณภาพ ส่งออกทั่วโลก สายพันธุ์แท้" />
+  <meta property="og:description" content="ฟาร์มปลากัดป่าคุณภาพ ส่งออกทั่วโลก" />
   <meta property="og:image" content="Logo.jpeg" />
-  <meta property="og:url" content="https://yourwebsite.com" />
+  <meta property="og:url" content="https://example.com" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
+  <meta property="og:site_name" content="Mahachai Wild Betta" />
+
+  <!-- ข้อมูลเมื่อแชร์ผ่าน Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
 
   <title>ปลากัดป่ามหาชัยเขตคลองครุ</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- ฟอนต์ไทย Sarabun -->
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet" />
 
+  <!-- CSS ภายใน -->
   <style>
     body {
       font-family: 'Sarabun', sans-serif;
       margin: 0;
-      background-color: #f1f8f6;
+      background: #f4f4f4;
       color: #333;
     }
+
     header {
       text-align: center;
-      background-color: #00796b;
+      background: #005f73;
       color: white;
       padding: 20px 10px;
     }
+
     header img {
-      max-width: 120px;
+      width: 100px;
+      border-radius: 50%;
       margin-top: 10px;
     }
+
     nav {
-      background-color: #004d40;
-      text-align: center;
-      padding: 10px;
+      display: flex;
+      justify-content: center;
+      background: #0a9396;
+      flex-wrap: wrap;
     }
+
     nav a {
+      padding: 14px 20px;
       color: white;
       text-decoration: none;
-      margin: 0 15px;
       font-weight: bold;
     }
+
     nav a:hover {
-      text-decoration: underline;
+      background: #94d2bd;
+      color: black;
     }
-    main.container {
+
+    .container {
+      padding: 20px;
       max-width: 1000px;
       margin: auto;
-      padding: 20px;
+      background: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      border-radius: 8px;
     }
+
     .fish-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       gap: 20px;
+      margin-top: 20px;
     }
+
     .fish-card {
-      background: white;
+      background: #e0f7fa;
       padding: 15px;
       border-radius: 8px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       text-align: center;
     }
+
     .fish-card img {
       max-width: 100%;
       border-radius: 8px;
-      margin-bottom: 10px;
     }
+
     .btn-group {
       margin-top: 10px;
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
     }
+
     .btn {
-      padding: 8px 12px;
-      text-decoration: none;
-      color: white;
-      border-radius: 5px;
-      font-size: 14px;
-    }
-    .btn-messenger { background-color: #0084FF; }
-    .btn-whatsapp { background-color: #25D366; }
-    .btn-payhip { background-color: #333; }
-    .btn-more {
       display: inline-block;
-      margin-top: 5px;
-      padding: 6px 10px;
-      background: #00796b;
+      padding: 8px 12px;
+      margin: 5px 3px;
+      background: #0077b6;
       color: white;
       border-radius: 5px;
       text-decoration: none;
     }
+
+    .btn:hover {
+      background: #90e0ef;
+      color: #000;
+    }
+
     footer {
       text-align: center;
       padding: 20px;
-      background: #e0f2f1;
-      font-size: 14px;
+      background: #001219;
+      color: white;
     }
+
     #contact ul {
       list-style: none;
       padding-left: 0;
     }
+
     #contact li {
-      margin-bottom: 5px;
+      margin-bottom: 10px;
     }
-    a {
-      color: #00796b;
+
+    /* ปุ่มเลื่อนขึ้นบน */
+    .back-to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #0077b6;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 20px;
+    }
+
+    .back-to-top:hover {
+      background: #90e0ef;
+      color: black;
     }
   </style>
 </head>
+
 <body>
 
 <header>
@@ -134,42 +171,43 @@
 </nav>
 
 <main class="container">
-  <div style="background:#e0f2f1;padding:12px 18px;border-radius:8px;margin-bottom:20px;font-weight:bold;text-align:center;color:#004d40;">
-    ✅ รับประกันคุณภาพ | 🌏 ส่งออกทั่วโลก | 🧬 ปลากัดสายแท้ | 🧪 พัฒนาสายพันธุ์เอง
+  <div style="background: #e6fffa; padding: 10px; border-left: 5px solid #00b4d8; margin-bottom: 20px;">
+    ✅ รับประกันคุณภาพ | 🌏 ส่งออกทั่วโลก | 🧬 เก็บสายพันธุ์แท้จากธรรมชาติ
   </div>
 
   <h2>สายพันธุ์ปลากัดแนะนำ (คลิกเพื่อดูรูปเพิ่มเติม)</h2>
+  
   <div class="fish-grid">
-    <!-- มหาชัย -->
+
     <div class="fish-card">
       <h3>มหาชัย</h3>
       <a href="A1.png"><img src="A1.png" alt="ปลากัดมหาชัย" loading="lazy"></a>
-      <a href="mahachai.html" class="btn-more">ดูรูปเพิ่มเติม</a>
+      <a href="mahachai.html" class="btn">ดูรูปเพิ่มเติม</a>
       <div class="btn-group">
-        <a href="https://m.me/wild.betta.mahachai" target="_blank" class="btn btn-messenger">Messenger</a>
-        <a href="https://wa.me/66800199351" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
-        <a href="https://payhip.com/b/xxxxxx" target="_blank" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
+        <a href="https://m.me/..." class="btn">Messenger</a>
+        <a href="https://wa.me/..." class="btn">WhatsApp</a>
+        <a href="https://payhip.com/..." class="btn">ซื้อผ่าน Payhip</a>
       </div>
     </div>
 
-    <!-- อีสาน -->
     <div class="fish-card">
       <h3>อีสานหางลาย / กีต้า</h3>
       <a href="isan.jpg"><img src="isan.jpg" alt="ปลากัดอีสาน" loading="lazy"></a>
       <div class="btn-group">
-        <a href="https://m.me/wild.betta.mahachai" target="_blank" class="btn btn-messenger">Messenger</a>
-        <a href="https://wa.me/66800199351" target="_blank" class="btn btn-whatsapp">WhatsApp</a>
-        <a href="https://payhip.com/b/yyyyyy" target="_blank" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
+        <a href="https://m.me/..." class="btn">Messenger</a>
+        <a href="https://wa.me/..." class="btn">WhatsApp</a>
+        <a href="https://payhip.com/..." class="btn">ซื้อผ่าน Payhip</a>
       </div>
     </div>
+
   </div>
 </main>
 
 <div id="contact" class="container">
   <h2>📞 ติดต่อเรา</h2>
-  <p>หากคุณสนใจปลากัดป่าคุณภาพจากมหาชัยหรือต้องการสอบถามข้อมูลเพิ่มเติม ติดต่อเราได้ทาง:</p>
+  <p>หากคุณสนใจปลากัดป่าคุณภาพ ติดต่อเราได้ตามช่องทางด้านล่าง</p>
   <ul>
-    <li><strong>Facebook:</strong> <a href="https://facebook.com/wild.betta.mahachai" target="_blank">เพจปลากัดป่ามหาชัยเขตคลองครุ</a></li>
+    <li><strong>Facebook:</strong> <a href="https://facebook.com/...">เพจปลากัด...</a></li>
     <li><strong>โทรศัพท์:</strong> 080-019-9351</li>
     <li><strong>Email:</strong> wildbettamahachaikhetklongkru@mahachai.com</li>
   </ul>
@@ -177,10 +215,13 @@
 
 <footer>
   &copy; 2025 ปลากัดป่ามหาชัยเขตคลองครุ<br>
-  พัฒนาและดูแลเว็บไซต์โดยทีมเพาะพันธุ์ปลากัดธรรมชาติคลองครุ
+  พัฒนาและดูแลโดยทีมเพาะพันธุ์ในพื้นที่
 </footer>
 
-<!-- Tawk.to -->
+<!-- ปุ่มกลับขึ้นบน -->
+<a href="#" class="back-to-top" title="เลื่อนขึ้นบน">⬆️</a>
+
+<!-- ระบบแชทสดจาก Tawk.to -->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{};
 Tawk_API.onLoad = function() {
@@ -188,6 +229,8 @@ Tawk_API.onLoad = function() {
     'language': 'th',
     'nickname': 'ผู้เยี่ยมชม | Visitor',
   }, function(error){});
+
+  // ปุ่มข้อความด่วน
   Tawk_API.addEvent('shortcut', {
     'คำถามเรื่องราคา': 'สนใจราคาปลากัดตัวนี้ครับ / What’s the price of this Betta?',
     'ขอรูปเพิ่มเติม': 'รบกวนขอรูปเพิ่มเติมหน่อยครับ / Can I see more photos of this fish?',
@@ -204,11 +247,8 @@ Tawk_API.onLoad = function() {
 })();
 </script>
 
-<!-- ปุ่มเลื่อนขึ้น -->
-<a href="#" style="position:fixed;bottom:20px;right:20px;background:#00796b;color:white;padding:10px 14px;border-radius:50%;text-decoration:none;font-size:20px;box-shadow:0 2px 6px rgba(0,0,0,0.2);">⬆️</a>
-
-<!-- Google Translate -->
-<div id="google_translate_element" style="position: fixed; top: 10px; right: 10px; z-index: 9999;"></div>
+<!-- ระบบแปลภาษา Google Translate -->
+<div id="google_translate_element" style="position: fixed; bottom: 10px; left: 10px;"></div>
 <script type="text/javascript">
 function googleTranslateElementInit() {
   new google.translate.TranslateElement({
