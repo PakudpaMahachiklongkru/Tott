@@ -265,9 +265,11 @@
         <h3>มหาชัย<br><small>Mahachaiensis</small></h3>
         <a href="mahachai.html" class="btn btn-payhip">ดูรูปเพิ่มเติม</a>
         <div class="btn-group">
-          <a href="https://m.me/yourpage" class="btn btn-messenger">Messenger</a>
-          <a href="https://wa.me/66800199351" class="btn btn-whatsapp">WhatsApp</a>
-          <a href="https://payhip.com/yourstore" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
+          <a href="https://m.me/yourpage" class="btn btn-messenger" target="_blank" rel="noopener">Messenger</a>
+          <a href="https://wa.me/yourpage" class="btn btn-WhatsApp" target="_blank" rel="noopener">WhatsApp</a>
+          
+          <a href="https://payhip.com/yourpage" class="btn btn-ซื้อผ่าน Payhip" target="_blank" rel="noopener">ซื้อผ่าน Payhip</a>
+           payhip.com
         </div>
       </div>
 
@@ -356,14 +358,48 @@
   })();
 </script>
 
-<!-- Google Translate -->
+<!-- ปุ่ม Google Translate -->
 <div id="google_translate_element"></div>
+
+<!-- สไตล์สำหรับตำแหน่งปุ่มแปลภาษา -->
+<style>
+  #google_translate_element {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    z-index: 1000;
+    background: white;
+    padding: 5px 8px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    font-size: 14px;
+  }
+
+  .goog-te-gadget {
+    font-family: 'Sarabun', sans-serif !important;
+  }
+
+  .goog-logo-link,
+  .goog-te-gadget span {
+    display: none !important;
+  }
+</style>
+
+<!-- สคริปต์เรียกใช้ Google Translate -->
 <script type="text/javascript">
   function googleTranslateElementInit() {
-    new google.translate.TranslateElement({ pageLanguage: 'th' }, 'google_translate_element');
+    new google.translate.TranslateElement({
+      pageLanguage: 'th',
+      includedLanguages: 'en,th',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
   }
 </script>
+
+<!-- โหลด JavaScript ของ Google Translate -->
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+
 </body>
 </html>
 
@@ -387,6 +423,21 @@
     lightbox.onclick = () => document.body.removeChild(lightbox);
     document.body.appendChild(lightbox);
   }
+</script>
+
+<!-- Lightbox สำหรับดูภาพเต็ม -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:10000;">
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border-radius:10px;" />
+</div>
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+  document.getElementById('lightbox').onclick = function () {
+    this.style.display = 'none';
+  };
 </script>
 
 </body>
