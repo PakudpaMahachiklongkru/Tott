@@ -126,8 +126,9 @@
       margin-top: 10px;
       display: flex;
       justify-content: center;
-      gap: 10px; /* ระยะห่างระหว่างปุ่ม */
-      flex-wrap: wrap; /* ถ้าแคบเกินให้ขึ้นบรรทัดใหม่ */
+      gap: 10px;
+      flex-wrap: nowrap; /* บังคับให้อยู่บรรทัดเดียว */
+      overflow-x: auto; /* ถ้าแคบเกินให้เลื่อนด้านข้าง */
     }
 
     .btn {
@@ -137,6 +138,8 @@
       text-decoration: none;
       font-weight: 600;
       transition: background-color 0.3s, color 0.3s;
+      white-space: nowrap;
+      flex-shrink: 0; /* ไม่ให้ปุ่มย่อขนาด */
     }
 
     .btn:hover,
@@ -144,7 +147,6 @@
       opacity: 0.9;
     }
 
-    /* ปรับสีเฉพาะของแต่ละปุ่ม */
     .btn-messenger {
       background: #0084FF;
     }
