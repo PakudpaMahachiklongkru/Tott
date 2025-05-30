@@ -2,26 +2,219 @@
 <!-- ประกาศว่าใช้ HTML5 -->
 
 <html lang="th" role="document">
+<!-- กำหนดว่าเนื้อหาเป็นภาษาไทย และเพิ่ม role="document" เพื่อช่วย screen reader -->
+
 <head>
-  <!-- ส่วนหัวเว็บไซต์เหมือนเดิม (ย่อไว้เพื่อความกระชับ) -->
+  <!-- ส่วนหัวเว็บไซต์: ข้อมูลพื้นฐาน, SEO, ฟอนต์ และ CSS -->
+
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#013A63" />
-  <title>ปลากัดป่ามหาชัยเขตคลองครุ | Mahachai Wild Betta</title>
-  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet" />
-  <style>
-    /* ... (โค้ด CSS จากคุณเหมือนเดิม ตัดบางส่วนออกเพื่อไม่ให้ซ้ำ) */
 
-    /* Lightbox สไตล์ */
-    .lightbox {
-      display: none;
+  <meta name="description" content="ฟาร์มปลากัดป่ามหาชัย เขตคลองครุ จำหน่ายปลากัดคุณภาพ ส่งทั่วโลก" />
+  <meta name="keywords" content="ปลากัดป่า, มหาชัย, ปลากัดอีสาน, Betta, ปลากัดส่งออก" />
+  <meta name="author" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
+  <meta name="robots" content="index, follow" />
+
+  <!-- แชร์บน Facebook -->
+  <meta property="og:title" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
+  <meta property="og:description" content="ฟาร์มปลากัดป่าคุณภาพ ส่งออกทั่วโลก" />
+  <meta property="og:image" content="https://example.com/images/Logo.jpeg" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Mahachai Wild Betta" />
+
+  <!-- แชร์บน Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
+  <meta name="twitter:description" content="ฟาร์มปลากัดป่าคุณภาพ ส่งออกทั่วโลก" />
+  <meta name="twitter:image" content="https://example.com/images/Logo.jpeg" />
+  <meta name="twitter:site" content="@MahachaiBetta" />
+
+  <title>ปลากัดป่ามหาชัยเขตคลองครุ | Mahachai Wild Betta</title>
+
+  <!-- favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="favicon-32x32.png" sizes="32x32" type="image/png" />
+  <link rel="icon" href="favicon-16x16.png" sizes="16x16" type="image/png" />
+  <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+
+  <!-- ฟอนต์ -->
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet" />
+
+  <!-- สไตล์หลักของเว็บไซต์ -->
+  <style>
+    body {
+      font-family: 'Sarabun', sans-serif;
+      margin: 0;
+      background: #f1f1f1;
+      color: #2c3e50;
+      line-height: 1.6;
+    }
+
+    header {
+      text-align: center;
+      background: #013A63;
+      color: white;
+      padding: 20px 10px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+    }
+
+    header img {
+      width: 100px;
+      height: auto;
+      border-radius: 50%;
+      margin-top: 10px;
+    }
+
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: #028090;
+      padding: 6px 0;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      font-size: 0.9rem;
+    }
+
+    nav a {
+      display: inline-block;
+      padding: 8px 15px;
+      margin: 5px 6px;
+      color: white;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 6px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav a:hover,
+    nav a:focus {
+      background: #9AE3D0;
+      color: #003049;
+    }
+
+    .container {
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .fish-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+
+    .fish-card {
+      background: #EAF4F4;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .fish-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .fish-card img {
+      width: 100%;
+      max-height: 350px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+
+    .btn-group {
+      margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: nowrap;
+      overflow-x: auto;
+    }
+
+    .btn {
+      padding: 8px 12px;
+      color: white;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: 600;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn:hover,
+    .btn:focus {
+      opacity: 0.9;
+    }
+
+    .btn-messenger {
+      background: #0084FF;
+    }
+
+    .btn-whatsapp {
+      background: #25D366;
+    }
+
+    .btn-payhip {
+      background: #6A1B9A;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #001219;
+      color: white;
+      font-size: 0.9rem;
+    }
+
+    .back-to-top {
       position: fixed;
-      z-index: 9999;
+      bottom: 20px;
+      right: 20px;
+      background: #1B4965;
+      color: white;
+      padding: 10px 15px;
+      border-radius: 50%;
+      text-decoration: none;
+      font-size: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .back-to-top:hover {
+      background: #ADE8F4;
+      color: black;
+    }
+
+    #google_translate_element {
+      position: fixed;
+      bottom: 10px;
+      left: 10px;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+      border-radius: 6px;
+      background: white;
+      padding: 5px 8px;
+    }
+
+    /* กล่อง lightbox */
+    .lightbox {
+      position: fixed;
+      display: none;
+      z-index: 1001;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.85);
+      background: rgba(0, 0, 0, 0.8);
       justify-content: center;
       align-items: center;
     }
@@ -30,52 +223,39 @@
       max-width: 90%;
       max-height: 90%;
       border-radius: 10px;
-      box-shadow: 0 0 12px rgba(255, 255, 255, 0.6);
     }
 
     .lightbox:target {
       display: flex;
     }
 
-    .close-lightbox {
-      position: absolute;
-      top: 30px;
-      right: 30px;
-      font-size: 30px;
-      color: white;
-      text-decoration: none;
-      background: rgba(0,0,0,0.5);
-      padding: 5px 10px;
-      border-radius: 5px;
-    }
+    @media screen and (max-width: 600px) {
+      header h1 {
+        font-size: 1.4rem;
+      }
 
-    .more-gallery {
-      display: flex;
-      gap: 10px;
-      margin-top: 10px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
+      .btn-group {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
 
-    .more-gallery img {
-      width: 60px;
-      height: 60px;
-      object-fit: cover;
-      border-radius: 5px;
-      cursor: pointer;
+      nav a {
+        font-size: 0.8rem;
+      }
     }
   </style>
 </head>
 
 <body>
-  <!-- ส่วน header และ nav เหมือนเดิม -->
-  <header>
+  <!-- ส่วนหัวเว็บ -->
+  <header role="banner">
     <h1>ปลากัดป่ามหาชัยเขตคลองครุ</h1>
     <p>ฟาร์มปลากัดป่าคุณภาพ | ส่งออกทั่วโลก</p>
     <img src="https://example.com/images/Logo.jpeg" alt="โลโก้ Mahachai Betta" loading="lazy" />
   </header>
 
-  <nav>
+  <!-- เมนู -->
+  <nav role="navigation" aria-label="เมนูหลัก">
     <a href="index.html">🏠 หน้าแรก</a>
     <a href="articles.html">📖 บทความ</a>
     <a href="species.html">🐟 สายพันธุ์ปลากัด</a>
@@ -83,43 +263,35 @@
   </nav>
 
   <!-- เนื้อหาหลัก -->
-  <main class="container">
+  <main role="main" class="container" aria-label="เนื้อหาหลักเว็บไซต์">
     <section aria-labelledby="species-heading">
       <h2 id="species-heading">สายพันธุ์ปลากัดป่าหลัก</h2>
-
       <div class="fish-grid">
-        <article class="fish-card" aria-label="ปลากัดมหาชัย">
-          <!-- รูปหลักคลิกเพื่อเปิด lightbox -->
-          <a href="#lightbox1">
+        <article class="fish-card" role="article" aria-label="ปลากัดมหาชัย">
+          <!-- รูปหลัก คลิกเพื่อเปิด lightbox -->
+          <a href="#mahachai-lightbox">
             <img src="https://example.com/images/A1.png" alt="ปลากัดมหาชัย" loading="lazy" />
           </a>
           <h3>ปลากัดมหาชัย</h3>
           <p>สายพันธุ์ปลากัดป่าจากมหาชัย น้ำใส สีสันสวยงาม</p>
-
-          <div class="btn-group">
-            <a href="https://m.me/your_messenger_id" class="btn btn-messenger" target="_blank">Messenger</a>
-            <a href="https://wa.me/your_whatsapp_number" class="btn btn-whatsapp" target="_blank">WhatsApp</a>
-            <a href="https://payhip.com/your_payhip_store" class="btn btn-payhip" target="_blank">Payhip</a>
+          <div class="btn-group" role="group" aria-label="ลิงก์สั่งซื้อและติดต่อ">
+            <a href="https://m.me/your_messenger_id" class="btn btn-messenger" target="_blank" rel="noopener noreferrer">Messenger</a>
+            <a href="https://wa.me/your_whatsapp_number" class="btn btn-whatsapp" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://payhip.com/your_payhip_store" class="btn btn-payhip" target="_blank" rel="noopener noreferrer">Payhip</a>
           </div>
-
-          <!-- ปุ่มดูรูปเพิ่มเติม -->
-          <div class="more-gallery">
-            <a href="#lightbox1"><img src="https://example.com/images/A2.png" alt="รูปเพิ่มเติม 1" /></a>
-            <a href="#lightbox1"><img src="https://example.com/images/A3.png" alt="รูปเพิ่มเติม 2" /></a>
-            <a href="#lightbox1"><img src="https://example.com/images/A4.png" alt="รูปเพิ่มเติม 3" /></a>
-          </div>
+          <p><a href="#mahachai-lightbox" style="display: inline-block; margin-top: 10px; font-weight: bold;">📷 ดูรูปเพิ่มเติม</a></p>
         </article>
       </div>
     </section>
   </main>
 
-  <!-- Lightbox: กล่องแสดงภาพแบบเต็มจอ -->
-  <div id="lightbox1" class="lightbox">
-    <a href="#" class="close-lightbox" aria-label="ปิดภาพ">✕</a>
-    <img src="https://example.com/images/A1.png" alt="ปลากัดมหาชัย - ขยายภาพ" />
+  <!-- กล่อง lightbox -->
+  <div id="mahachai-lightbox" class="lightbox" onclick="this.style.display='none'">
+    <img src="https://example.com/images/A2.png" alt="รูปเพิ่มเติม ปลากัดมหาชัย" />
   </div>
 
-  <footer>
+  <!-- ฟุตเตอร์ -->
+  <footer role="contentinfo">
     <p>ลิขสิทธิ์ © 2025 ปลากัดป่ามหาชัยเขตคลองครุ</p>
   </footer>
 
@@ -128,6 +300,7 @@
 
   <!-- Google Translate -->
   <div id="google_translate_element" role="complementary" aria-label="เครื่องมือแปลภาษา"></div>
+
   <script type="text/javascript">
     function googleTranslateElementInit() {
       new google.translate.TranslateElement(
@@ -138,4 +311,5 @@
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 </body>
+
 </html>
