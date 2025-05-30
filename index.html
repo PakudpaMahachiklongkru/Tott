@@ -4,18 +4,18 @@
 <html lang="th">
 
 <head>
-  <!-- กำหนดชุดอักขระเป็น UTF-8 (รองรับภาษาไทย) -->
+  <!-- กำหนดชุดอักขระเป็น UTF-8 -->
   <meta charset="UTF-8" />
-  <!-- รองรับการแสดงผลในมือถือแบบ responsive -->
+  <!-- รองรับการแสดงผลแบบ Responsive -->
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <!-- ข้อมูลสำหรับ SEO (ให้ Google ค้นหาเว็บเจอ) -->
+  
+  <!-- SEO -->
   <meta name="description" content="ฟาร์มปลากัดป่ามหาชัย เขตคลองครุ จำหน่ายปลากัดคุณภาพ ส่งทั่วโลก" />
   <meta name="keywords" content="ปลากัดป่า, มหาชัย, ปลากัดอีสาน, Betta, ปลากัดส่งออก" />
   <meta name="author" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
   <meta name="robots" content="index, follow" />
 
-  <!-- ข้อมูลสำหรับแชร์ลิงก์บน Facebook -->
+  <!-- แชร์ Facebook -->
   <meta property="og:title" content="ปลากัดป่ามหาชัยเขตคลองครุ" />
   <meta property="og:description" content="ฟาร์มปลากัดป่าคุณภาพ ส่งออกทั่วโลก" />
   <meta property="og:image" content="Logo.jpeg" />
@@ -23,20 +23,20 @@
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Mahachai Wild Betta" />
 
-  <!-- แชร์บน Twitter -->
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
 
-  <!-- ชื่อหน้าเว็บที่แสดงบนแท็บเบราว์เซอร์ -->
+  <!-- ชื่อเว็บบนแท็บ -->
   <title>ปลากัดป่ามหาชัยเขตคลองครุ</title>
-  <!-- ไอคอนเล็กๆ บนแท็บ -->
+  <!-- ไอคอน -->
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
 
-  <!-- โหลดฟอนต์ Sarabun จาก Google Fonts -->
+  <!-- ฟอนต์จาก Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@400;700&display=swap" rel="stylesheet" />
 
-  <!-- สไตล์ CSS ทั้งหมดของเว็บ -->
+  <!-- CSS สไตล์ -->
   <style>
-    /* ตั้งค่าทั่วไป */
+    /* ตั้งค่าทั่วไปของเว็บไซต์ */
     body {
       font-family: 'Sarabun', sans-serif;
       margin: 0;
@@ -44,12 +44,13 @@
       color: #333;
     }
 
-    /* ส่วนหัวของเว็บ */
+    /* ส่วนหัวเว็บ */
     header {
       text-align: center;
       background: #005f73;
       color: white;
       padding: 20px 10px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
     header img {
@@ -58,37 +59,45 @@
       margin-top: 10px;
     }
 
-    /* เมนูนำทาง */
+    /* เมนูแนวนอน บรรทัดเดียว */
     nav {
       display: flex;
-      justify-content: center;
+      overflow-x: auto;
+      white-space: nowrap;
       background: #0a9396;
-      flex-wrap: wrap;
+      padding: 10px 0;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      -webkit-overflow-scrolling: touch;
     }
 
     nav a {
-      padding: 14px 20px;
+      display: inline-block;
+      padding: 12px 20px;
+      margin: 0 5px;
       color: white;
       text-decoration: none;
       font-weight: bold;
+      border-radius: 6px;
+      transition: 0.3s;
     }
 
     nav a:hover {
       background: #94d2bd;
-      color: black;
+      color: #000;
     }
 
-    /* กล่องหลักของเนื้อหา */
+    /* กล่องเนื้อหา */
     .container {
       padding: 20px;
       max-width: 1000px;
       margin: auto;
       background: white;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
       border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
     }
 
-    /* ตำแหน่งและการจัดวางของการ์ดปลา */
+    /* การจัดวางของการ์ดปลา */
     .fish-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -100,19 +109,17 @@
       background: #e0f7fa;
       padding: 15px;
       border-radius: 8px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
       text-align: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
     }
 
-    /* รูปภาพปลา */
     .fish-card img {
       width: 100%;
-      max-height: 350px; /* ✅ ปรับให้รูปยาวขึ้นจาก 250px เป็น 350px */
+      max-height: 350px;
       object-fit: cover;
       border-radius: 8px;
     }
 
-    /* ปุ่มด้านล่างของแต่ละการ์ด */
     .btn-group {
       margin-top: 10px;
     }
@@ -132,7 +139,6 @@
       color: #000;
     }
 
-    /* ส่วนท้ายของเว็บ */
     footer {
       text-align: center;
       padding: 20px;
@@ -149,7 +155,6 @@
       margin-bottom: 10px;
     }
 
-    /* ปุ่มกลับขึ้นบน */
     .back-to-top {
       position: fixed;
       bottom: 20px;
@@ -171,14 +176,14 @@
 
 <body>
 
-<!-- ส่วนหัวของเว็บไซต์ -->
+<!-- ส่วนหัวเว็บไซต์ -->
 <header>
   <h1>ปลากัดป่ามหาชัยเขตคลองครุ</h1>
   <p>ฟาร์มปลากัดป่าคุณภาพ | ส่งออกทั่วโลก</p>
   <img src="Logo.jpeg" alt="โลโก้" loading="lazy">
 </header>
 
-<!-- เมนูนำทาง -->
+<!-- เมนูหลัก (แนวนอนบรรทัดเดียว) -->
 <nav>
   <a href="index.html">🏠 หน้าแรก</a>
   <a href="articles.html">📖 บทความ</a>
@@ -189,14 +194,12 @@
 
 <!-- เนื้อหาหลัก -->
 <main class="container">
-  <!-- แถบไฮไลต์ข้อความ -->
   <div style="background: #e6fffa; padding: 10px; border-left: 5px solid #00b4d8; margin-bottom: 20px;">
     ✅ รับประกันคุณภาพ | 🌏 ส่งออกทั่วโลก | 🧬 เก็บสายพันธุ์แท้จากธรรมชาติ
   </div>
 
   <h2>สายพันธุ์ปลากัดแนะนำ (คลิกเพื่อดูรูปเพิ่มเติม)</h2>
 
-  <!-- การ์ดปลา -->
   <div class="fish-grid">
     <div class="fish-card">
       <h3>มหาชัย</h3>
@@ -232,43 +235,43 @@
   </ul>
 </div>
 
-<!-- ส่วนท้าย -->
+<!-- ส่วนท้ายเว็บ -->
 <footer>
   &copy; 2025 ปลากัดป่ามหาชัยเขตคลองครุ<br>
   พัฒนาและดูแลโดยทีมเพาะพันธุ์ในพื้นที่
 </footer>
 
-<!-- ปุ่มเลื่อนกลับขึ้นด้านบน -->
+<!-- ปุ่มกลับไปบน -->
 <a href="#" class="back-to-top" title="เลื่อนขึ้นบน">⬆️</a>
 
-<!-- ระบบแชทสด Tawk.to -->
+<!-- แชทสด Tawk.to -->
 <script type="text/javascript">
-var Tawk_API=Tawk_API||{};
-Tawk_API.onLoad = function() {
-  Tawk_API.setAttributes({
-    'language': 'th',
-    'nickname': 'ผู้เยี่ยมชม | Visitor',
-  }, function(error){});
-};
-(function(){
-  var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-  s1.async=true;
-  s1.src='https://embed.tawk.to/6838c455c1b21a190c027386/1isertsf5';
-  s1.charset='UTF-8';
-  s1.setAttribute('crossorigin','*');
-  s0.parentNode.insertBefore(s1,s0);
-})();
+  var Tawk_API = Tawk_API || {};
+  Tawk_API.onLoad = function () {
+    Tawk_API.setAttributes({
+      'language': 'th',
+      'nickname': 'ผู้เยี่ยมชม | Visitor',
+    }, function (error) { });
+  };
+  (function () {
+    var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+    s1.async = true;
+    s1.src = 'https://embed.tawk.to/6838c455c1b21a190c027386/1isertsf5';
+    s1.charset = 'UTF-8';
+    s1.setAttribute('crossorigin', '*');
+    s0.parentNode.insertBefore(s1, s0);
+  })();
 </script>
 
-<!-- ระบบแปลภาษา Google Translate -->
+<!-- Google Translate -->
 <div id="google_translate_element" style="position: fixed; bottom: 10px; left: 10px;"></div>
 <script type="text/javascript">
-function googleTranslateElementInit() {
-  new google.translate.TranslateElement({
-    pageLanguage: 'th',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-  }, 'google_translate_element');
-}
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'th',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
 </script>
 <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
