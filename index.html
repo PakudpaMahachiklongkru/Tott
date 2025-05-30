@@ -250,8 +250,10 @@
 
     <div class="fish-grid">
       <div class="fish-card">
-        <h3>มหาชัย<br><small>Mahachaiensis</small></h3>
-        <a href="A1.png"><img src="A1.png" alt="ปลากัดมหาชัย" /></a>
+      <!-- ใส่ onclick ที่ภาพ -->
+  <img src="images/A1.png" alt="ปลากัดมหาชัย" onclick="openLightbox('images/A1-2.jpg')" style="cursor: pointer;" />
+<h3>มหาชัย<br><small>Mahachaiensis</small></h3>
+
         <a href="mahachai.html" class="btn btn-payhip">ดูรูปเพิ่มเติม</a>
         <div class="btn-group">
           <a href="https://m.me/yourpage" class="btn btn-messenger">Messenger</a>
@@ -289,9 +291,6 @@
     พัฒนาและดูแลโดยทีมเพาะพันธุ์ในพื้นที่
   </footer>
 
-  <!-- ปุ่มเลื่อนขึ้น -->
-  <a href="#" class="back-to-top" title="เลื่อนขึ้นบน">⬆️</a>
-
   <!-- ระบบแชต Tawk.to -->
   <script type="text/javascript">
     var Tawk_API = Tawk_API || {};
@@ -322,6 +321,24 @@
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-</body>
+  
+  <!-- Lightbox ป๊อปอัป -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.9); justify-content:center; align-items:center; z-index:9999;">
+  <span onclick="closeLightbox()" style="position:absolute; top:20px; right:30px; color:white; font-size:30px; cursor:pointer;">&times;</span>
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border-radius:10px;" />
+</div>
 
+<script>
+  function openLightbox(src) {
+    document.getElementById("lightbox-img").src = src;
+    document.getElementById("lightbox").style.display = "flex";
+  }
+
+   function closeLightbox() {
+    document.getElementById("lightbox").style.display = "none";
+  }
+</script>
+
+</body>
 </html>
