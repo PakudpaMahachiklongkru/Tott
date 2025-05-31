@@ -398,17 +398,6 @@
   }
 </style>
 
-<!-- สคริปต์เรียกใช้ Google Translate -->
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'th',
-      includedLanguages: 'en,th',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
-  }
-</script>
-
 <!-- โหลด JavaScript ของ Google Translate -->
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
@@ -416,21 +405,29 @@
 </body>
 </html>
 
-
-
-
-<!-- Google Translate -->
-<div id="google_translate_element"></div>
-
-<script type="text/javascript">
-  function googleTranslateElementInit() {
-    new google.translate.TranslateElement({
-      pageLanguage: 'th',
-      includedLanguages: 'en,th',
-      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-    }, 'google_translate_element');
+<!-- Lightbox Viewer สำหรับคลิกที่รูป -->
+<script>
+  function openLightbox(src) {
+    const lightbox = document.createElement('div');
+    lightbox.style.position = 'fixed';
+    lightbox.style.top = 0;
+    lightbox.style.left = 0;
+    lightbox.style.width = '100%';
+    lightbox.style.height = '100%';
+    lightbox.style.background = 'rgba(0,0,0,0.8)';
+    lightbox.style.display = 'flex';
+    lightbox.style.alignItems = 'center';
+    lightbox.style.justifyContent = 'center';
+    lightbox.style.zIndex = '9999';
+    lightbox.innerHTML = `
+      <img src="${src}" style="max-width: 90%; max-height: 90%; border: 5px solid white; border-radius: 10px;" />
+    `;
+    lightbox.onclick = () => document.body.removeChild(lightbox);
+    document.body.appendChild(lightbox);
   }
 </script>
+
+
 
 <script type="text/javascript"
   src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
@@ -493,6 +490,16 @@ document.getElementById('lightbox').onclick = function () {
   };
 </script>
 
+<!-- สคริปต์เรียกใช้ Google Translate -->
+<script type="text/javascript">
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'th',
+      includedLanguages: 'en,th',
+      layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+    }, 'google_translate_element');
+  }
+</script>
 
   <!-- Google Translate -->
   <script type="text/javascript">
@@ -505,9 +512,6 @@ document.getElementById('lightbox').onclick = function () {
     }
   </script>
   <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-
-  <!-- ตำแหน่งของ Google Translate ปุ่มแปลภาษา -->
-  <div id="google_translate_element"></div>
 
 </body>
 </html>
