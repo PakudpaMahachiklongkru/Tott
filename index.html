@@ -125,29 +125,22 @@
       object-fit: cover;
       border-radius: 8px;
     }
+   
     .btn-group {
-  display: flex;
-  justify-content: center;
-  gap: 10px;
-  flex-wrap: wrap; /* ให้ปุ่มขึ้นบรรทัดใหม่เมื่อไม่พอ */
   margin-top: 10px;
+  display: flex;
+  justify-content: flex-start; /* หรือ center ตามต้องการ */
+  gap: 10px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
 }
 
-.btn-group a {
-  padding: 8px 12px;
-  font-size: 14px;
-  border-radius: 5px;
-  text-align: center;
-  white-space: nowrap; /* ไม่ให้ข้อความตัดบรรทัด */
+.btn-group::-webkit-scrollbar {
+  display: none; /* ซ่อนแถบ scrollbar */
 }
 
-/* Optional: ลดขนาดปุ่มบนหน้าจอเล็ก */
-@media (max-width: 400px) {
-  .btn-group a {
-    font-size: 12px;
-    padding: 6px 10px;
-  }
-}
     .btn:hover, .btn:focus {
       opacity: 0.9;
     }
