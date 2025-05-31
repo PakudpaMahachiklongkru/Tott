@@ -20,6 +20,9 @@
   <meta property="og:site_name" content="Mahachai Wild Betta" />
   <!-- แชร์บน Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
 
   <link rel="icon" href="favicon.ico" sizes="any">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
@@ -283,14 +286,15 @@
   </div>
 </div>      
 
-<h3>อีสานหางลาย / กีต้า<br><small>Isan Gitta</small></h3>
-        <a href="isan.jpg"><img src="isan.jpg" alt="ปลากัดอีสาน" /></a>
-        <div class="btn-group">
-          <a href="https://m.me/yourpage" class="btn btn-messenger">Messenger</a>
-          <a href="https://wa.me/66800199351" class="btn btn-whatsapp">WhatsApp</a>
-          <a href="https://payhip.com/yourstore" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
-        </div>
-      </div>
+<div class="fish-card">
+  <h3>อีสานหางลาย / กีต้า<br><small>Isan Gitta</small></h3>
+  <a href="isan.jpg"><img src="isan.jpg" alt="ปลากัดอีสาน" /></a>
+  <div class="btn-group">
+    <a href="https://m.me/yourpage" class="btn btn-messenger">Messenger</a>
+    <a href="https://wa.me/66800199351" class="btn btn-whatsapp">WhatsApp</a>
+    <a href="https://payhip.com/yourstore" class="btn btn-payhip">ซื้อผ่าน Payhip</a>
+  </div>
+</div>
       
       <div class="fish-card">
         <a href="redcheek.html">
@@ -481,7 +485,31 @@
   });
 </script>
 
-  </script>
+  <!-- Lightbox แบบพื้นฐาน -->
+<script>
+  function openLightbox(src) {
+    const lightbox = document.createElement("div");
+    lightbox.style.position = "fixed";
+    lightbox.style.top = 0;
+    lightbox.style.left = 0;
+    lightbox.style.width = "100%";
+    lightbox.style.height = "100%";
+    lightbox.style.background = "rgba(0,0,0,0.8)";
+    lightbox.style.display = "flex";
+    lightbox.style.justifyContent = "center";
+    lightbox.style.alignItems = "center";
+    lightbox.style.zIndex = 9999;
+    lightbox.onclick = () => document.body.removeChild(lightbox);
+
+    const img = document.createElement("img");
+    img.src = src;
+    img.style.maxWidth = "90%";
+    img.style.maxHeight = "90%";
+    img.style.borderRadius = "10px";
+    lightbox.appendChild(img);
+    document.body.appendChild(lightbox);
+  }
+</script>
 
   <!-- Google Translate -->
   <script type="text/javascript">
