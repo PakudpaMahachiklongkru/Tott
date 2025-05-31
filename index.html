@@ -416,27 +416,7 @@
 </body>
 </html>
 
-<!-- Lightbox Viewer สำหรับคลิกที่รูป -->
-<script>
-  function openLightbox(src) {
-    const lightbox = document.createElement('div');
-    lightbox.style.position = 'fixed';
-    lightbox.style.top = 0;
-    lightbox.style.left = 0;
-    lightbox.style.width = '100%';
-    lightbox.style.height = '100%';
-    lightbox.style.background = 'rgba(0,0,0,0.8)';
-    lightbox.style.display = 'flex';
-    lightbox.style.alignItems = 'center';
-    lightbox.style.justifyContent = 'center';
-    lightbox.style.zIndex = '9999';
-    lightbox.innerHTML = `
-      <img src="${src}" style="max-width: 90%; max-height: 90%; border: 5px solid white; border-radius: 10px;" />
-    `;
-    lightbox.onclick = () => document.body.removeChild(lightbox);
-    document.body.appendChild(lightbox);
-  }
-</script>
+
 
 
 <!-- Google Translate -->
@@ -455,6 +435,7 @@
 <script type="text/javascript"
   src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
 </script>
+
 
 <!-- Lightbox (เปิดรูปเต็มเมื่อคลิก) -->
 <div id="lightbox" style="display:none; position:fixed; z-index:9999; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.9); align-items:center; justify-content:center;">
@@ -496,6 +477,22 @@
     document.body.appendChild(lightbox);
   }
 </script>
+
+<!-- Lightbox สำหรับดูภาพเต็ม -->
+<div id="lightbox" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.8); justify-content:center; align-items:center; z-index:10000;">
+  <img id="lightbox-img" src="" style="max-width:90%; max-height:90%; border-radius:10px;" />
+</div>
+<script>
+  function openLightbox(src) {
+    document.getElementById('lightbox-img').src = src;
+    document.getElementById('lightbox').style.display = 'flex';
+  }
+
+document.getElementById('lightbox').onclick = function () {
+    this.style.display = 'none';
+  };
+</script>
+
 
   <!-- Google Translate -->
   <script type="text/javascript">
